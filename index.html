@@ -1,0 +1,26 @@
+---
+layout: default
+title: 首页
+---
+
+<section class="hero">
+  <h1>公开透明 · 治理留痕 · 群聊防失联（占位口号）</h1>
+  <p>这里归档本群的公告、群规、白名单与隐私安全提示，方便成员随时查阅（占位说明）。</p>
+  <div class="actions">
+    <a class="btn primary" href="{{ '/announcements/' | relative_url }}">查看最新公告</a>
+    <a class="btn" href="{{ '/rules/' | relative_url }}">阅读群规</a>
+  </div>
+</section>
+
+<section>
+  <h2>最新公告</h2>
+  <div class="grid">
+    {% for post in site.posts limit:6 %}
+    <article class="card">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+      <p>{{ post.excerpt | strip_html | truncate: 96 }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
