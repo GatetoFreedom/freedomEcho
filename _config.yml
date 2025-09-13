@@ -1,0 +1,31 @@
+title: Gate to Freedom
+description: 公开透明的群公告与治理信息归档（占位文案）
+url: https://gate2freedom.com
+baseurl: ""                 # 自定义域名直挂顶级域；若挂子路径，改这里
+lang: zh-CN
+timezone: Asia/Shanghai
+
+# 文章与页面
+permalink: /:categories/:year/:month/:day/:title/
+collections:
+  posts:
+    output: true
+
+# 插件（SEO / Feed / Sitemap）
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+# 导航（在 header.html 中使用）
+nav:
+  - name: 公告
+    url: /announcements/
+  - name: 群规
+    url: /rules/
+  - name: 关于
+    url: /about/
+
+# Feed 设置（可选）
+feed:
+  path: feed.xml
