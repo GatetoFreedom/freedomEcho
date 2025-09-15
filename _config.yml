@@ -11,11 +11,23 @@ collections:
   posts:
     output: true
 
-# 插件（SEO / Feed / Sitemap）
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-paginate
+
+# 公告分页：每页 12 篇，可自行调
+paginate: 12
+paginate_path: "/announcements/page:num/"
+
+# 让所有 _posts 默认用 post 布局（修复“空白+小字”）
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
 
 # 导航（在 header.html 中使用）
 nav:
