@@ -1,10 +1,14 @@
-<header class="site-header glass">
-  <div class="container row">
-    <a class="brand" href="{{ '/' | relative_url }}">Gate to Freedom</a>
-    <nav class="nav">
-      {% for item in site.nav %}
-        <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.name }}</a>
-      {% endfor %}
+<header class="site-header glass island" data-state="expanded">
+  <div class="container island-inner">
+    <div class="island-brand">
+      <a class="brand" href="{{ '/' | relative_url }}">Gate to Freedom</a>
+      <button class="island-toggle" aria-label="展开/收起导航" title="展开/收起">▾</button>
+    </div>
+    <nav class="island-nav">
+      <a class="nav-link" href="{{ '/announcements/' | relative_url }}">公告</a>
+      <a class="nav-link" href="{{ '/rules/' | relative_url }}">群规</a>
+      <a class="nav-link" href="{{ '/about/' | relative_url }}">关于</a>
+      <a class="nav-link join" href="https://t.me/gatetofreedom" target="_blank" rel="noopener">加入我们</a>
     </nav>
   </div>
 </header>
