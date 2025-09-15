@@ -4,13 +4,12 @@
     {% include head.html %}
   </head>
   <body class="theme-auto">
-    <!-- 背景层：彩色柔光液态渐变 + 模糊 -->
-    <div class="bg">
-      <span class="blob b1"></span>
-      <span class="blob b2"></span>
-      <span class="blob b3"></span>
-      <span class="blob b4"></span>
-    </div>
+    <!-- 背景：根据深/浅色模式切换两张壁纸，并叠加柔光罩 -->
+    <div class="bg-img"></div>
+    <div class="bg-sheen"></div>
+
+    <!-- 页面切换时的过渡层（JS 动态使用） -->
+    <div id="xfer-root"></div>
 
     <a class="skip" href="#main">跳到正文</a>
     {% include header.html %}
@@ -20,6 +19,7 @@
     </main>
 
     {% include footer.html %}
+
     <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </body>
 </html>
