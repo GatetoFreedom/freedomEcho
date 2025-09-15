@@ -16,7 +16,7 @@ title: 首页
   <h2>最新公告</h2>
   <div class="grid">
     {% for post in site.posts limit:6 %}
-    <article class="card glass">
+    <article class="card glass tilt">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
       <p>{{ post.excerpt | strip_html | truncate: 96 }}</p>
