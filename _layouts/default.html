@@ -4,11 +4,11 @@
     {% include head.html %}
   </head>
   <body class="theme-auto">
-    <!-- 背景：根据深/浅色模式切换两张壁纸，并叠加柔光罩 -->
+    <!-- 响应式壁纸 + 柔光层 -->
     <div class="bg-img"></div>
     <div class="bg-sheen"></div>
 
-    <!-- 页面切换时的过渡层（JS 动态使用） -->
+    <!-- 页面切换时的过渡层 -->
     <div id="xfer-root"></div>
 
     <a class="skip" href="#main">跳到正文</a>
@@ -19,7 +19,6 @@
     </main>
 
     {% include footer.html %}
-
     <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </body>
 </html>
