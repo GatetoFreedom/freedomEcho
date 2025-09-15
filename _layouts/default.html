@@ -3,12 +3,23 @@
   <head>
     {% include head.html %}
   </head>
-  <body>
+  <body class="theme-auto">
+    <!-- 背景层：彩色柔光液态渐变 + 模糊 -->
+    <div class="bg">
+      <span class="blob b1"></span>
+      <span class="blob b2"></span>
+      <span class="blob b3"></span>
+      <span class="blob b4"></span>
+    </div>
+
     <a class="skip" href="#main">跳到正文</a>
     {% include header.html %}
-    <main id="main" class="container">
+
+    <main id="main" class="container page">
       {{ content }}
     </main>
+
     {% include footer.html %}
+    <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </body>
 </html>
