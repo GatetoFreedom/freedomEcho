@@ -1,9 +1,9 @@
-<header class="site-header">
+<header class="site-header glass">
   <div class="container row">
     <a class="brand" href="{{ '/' | relative_url }}">Gate to Freedom</a>
     <nav class="nav">
       {% for item in site.nav %}
-        <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
+        <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.name }}</a>
       {% endfor %}
     </nav>
   </div>
