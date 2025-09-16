@@ -13,24 +13,41 @@ pagination:
 <h1>公告归档</h1>
 <p class="muted">汇总所有公告（按时间倒序）。</p>
 
+{%- comment -%} 统一拿到 posts：优先 v2 → 旧版 → 兜底 {%- endcomment -%}
+{% assign posts_any = pagination.posts | default: paginator.posts | default: site.posts %}
+
 <div class="grid ann-grid">
-{% for post in pagination.posts %}
-  <article class="card glass tilt">
+  {% for post in posts_any %}
+  <article class="card glass tilt reveal">
     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
     <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
     <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
   </article>
-{% endfor %}
+  {% endfor %}
 </div>
 
+{%- comment -%} 页码与前后页链接（v2 / 旧 / 兜底） {%- endcomment -%}
+{% assign page_num = pagination.page | default: paginator.page | default: 1 %}
+{% assign total_pages = pagination.total_pages | default: paginator.total_pages | default: 1 %}
+{% assign prev_url = nil %}
+{% if pagination.previous and pagination.previous.url %}
+  {% assign prev_url = pagination.previous.url %}
+{% elsif pagination.previous_page_path %}
+  {% assign prev_url = pagination.previous_page_path %}
+{% elsif paginator.previous_page_path %}
+  {% assign prev_url = paginator.previous_page_path %}
+{% endif %}
+{% assign next_url = nil %}
+{% if pagination.next and pagination.next.url %}
+  {% assign next_url = pagination.next.url %}
+{% elsif pagination.next_page_path %}
+  {% assign next_url = pagination.next_page_path %}
+{% elsif paginator.next_page_path %}
+  {% assign next_url = paginator.next_page_path %}
+{% endif %}
+
 <nav class="pager">
-  {% if pagination.previous %}
-    <a class="btn pager-link" rel="prev" href="{{ pagination.previous.url | relative_url }}">上一页</a>
-  {% endif %}
-
-  <span class="pager-meta">第 {{ pagination.page }} / {{ pagination.total_pages }} 页</span>
-
-  {% if pagination.next %}
-    <a class="btn pager-link" rel="next" href="{{ pagination.next.url | relative_url }}">下一页</a>
-  {% endif %}
+  {% if prev_url %}<a class="btn pager-link" rel="prev" href="{{ prev_url | relative_url }}">上一页</a>{% endif %}
+  <span class="pager-meta">第 {{ page_num }} / {{ total_pages }} 页</span>
+  {% if next_url %}<a class="btn pager-link" rel="next" href="{{ next_url | relative_url }}">下一页</a>{% endif %}
 </nav>
