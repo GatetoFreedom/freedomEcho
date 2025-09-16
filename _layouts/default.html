@@ -4,12 +4,14 @@
     {% include head.html %}
   </head>
   <body class="theme-auto">
-    <!-- 响应式壁纸 + 柔光层 -->
+    <!-- 背景（横/竖 × 深/浅）+ 柔光层 -->
     <div class="bg-img"></div>
     <div class="bg-sheen"></div>
 
-    <!-- 页面切换时的过渡层 -->
+    <!-- 页面切换动画层 -->
     <div id="xfer-root"></div>
+    <!-- 模态框层（加入我们二次确认） -->
+    <div id="modal-root"></div>
 
     <a class="skip" href="#main">跳到正文</a>
     {% include header.html %}
