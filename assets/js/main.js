@@ -61,13 +61,15 @@ function pickBgImage(){
   return dark ? '/assets/img/ipados26-dark.png' : '/assets/img/ipados26-light.png';
 }
 
-/* ========= 页面切换：从点击按钮位置飞出覆盖层 ========= */
+/* ========= 页面切换：从点击点 clip-path 水滴扩散 ========= */
 function setupPageTransitions() {
   const origin = window.location.origin;
   const links = Array.from(document.querySelectorAll('a[href]:not([target="_blank"])')).filter(a => {
     const href = a.getAttribute('href') || '';
     if (href.startsWith('#')) return false;
     const url = new URL(href, window.location.href);
+    // 排除“加入我们”确认按钮
+    if (a.classList.contains('join-confirm')) return false;
     return url.origin === origin;
   });
 
@@ -81,7 +83,7 @@ function setupPageTransitions() {
         e.preventDefault();
         const grid = document.querySelector('.ann-grid');
         if (grid) grid.classList.add('flip-out');
-        setTimeout(() => { window.location.assign(new URL(href, window.location.href).toString()); }, 460);
+        setTimeout(() => { window.location.assign(new URL(href, window.location.href).toString()); }, 480);
         return;
       }
 
@@ -104,22 +106,29 @@ function animateAndGo(url, rect) {
   ov.style.setProperty('--ox', `${cx}px`);
   ov.style.setProperty('--oy', `${cy}px`);
 
+  // 覆盖全屏的最小半径
+  const w = window.innerWidth, h = window.innerHeight;
+  const dx = Math.max(cx, w - cx);
+  const dy = Math.max(cy, h - cy);
+  const R = Math.hypot(dx, dy) + 48;
+  ov.style.setProperty('--R', `${R}px`);
+
   // 旧页淡出
   document.querySelector('main')?.classList.add('fade-out');
 
-  // 保存归一化坐标给新页入场
-  sessionStorage.setItem('xfer', JSON.stringify({ ox: cx / window.innerWidth, oy: cy / window.innerHeight }));
+  // 传递归一化坐标，给新页入场节奏
+  sessionStorage.setItem('xfer', JSON.stringify({ ox: cx / w, oy: cy / h }));
 
   xferRoot.appendChild(ov);
   requestAnimationFrame(() => ov.classList.add('in'));
-  setTimeout(() => { window.location.assign(url); }, 620); // 与 CSS --t-slow 对齐
+  setTimeout(() => { window.location.assign(url); }, 760);
 }
 document.addEventListener('DOMContentLoaded', setupPageTransitions);
 
-/* ========= 新页进场：分组分层（Zoom/Rise/卡片级联） ========= */
+/* ========= 新页进场：瀑布级联 ========= */
 function stagedEnter(){
   const raw = sessionStorage.getItem('xfer');
-  if (!raw) return; // 直接打开/刷新时不做转场
+  if (!raw) return; // 直接打开/刷新不做转场
 
   try{
     const {ox, oy} = JSON.parse(raw);
@@ -127,27 +136,23 @@ function stagedEnter(){
     document.body.style.setProperty('--oy', `${oy * window.innerHeight}px`);
   }catch(_){}
 
-  // 先隐藏，再触发入场动画
   document.body.classList.add('pre-enter');
 
-  // 级联延时
+  // 卡片级联延时（每 60ms 递增）
   document.querySelectorAll('.grid .card').forEach((el, i) => el.style.setProperty('--d', (i*60)+'ms'));
+  // 文章正文轻度级联
   document.querySelectorAll('.post .post-body > *').forEach((el, i) => el.style.setProperty('--i', i+1));
 
   requestAnimationFrame(() => {
     document.body.classList.add('enter');
-    document.body.classList.remove('pre-enter');   // ★ 关键：移除，避免正文一直透明
+    document.body.classList.remove('pre-enter');   // 关键：移除，保证正文可见
     sessionStorage.removeItem('xfer');
   });
 }
 document.addEventListener('DOMContentLoaded', stagedEnter);
+window.addEventListener('pageshow', () => { document.body.classList.remove('pre-enter'); });
 
-// 兜底：某些浏览器历史缓存返回时，确保没有残留 pre-enter
-window.addEventListener('pageshow', () => {
-  document.body.classList.remove('pre-enter');
-});
-
-/* ========= 卡片 Tilt（视差倾斜） ========= */
+/* ========= 卡片 Tilt ========= */
 function setupTilt() {
   const cards = document.querySelectorAll('.card.tilt, .ann-grid .card');
   cards.forEach(card => {
@@ -186,3 +191,55 @@ if (sheen){
     sheen.style.transform = `translateY(${y * -0.03}px)`;
   }, { passive: true });
 }
+
+/* ========= “加入我们”二次确认 ========= */
+function createModal(html){
+  const root = document.getElementById('modal-root');
+  const wrap = document.createElement('div');
+  wrap.innerHTML = html.trim();
+  const frag = wrap.firstElementChild;
+  root.appendChild(frag);
+  requestAnimationFrame(() => {
+    frag.querySelector('.modal')?.classList.add('in');
+    frag.querySelector('.modal-backdrop')?.classList.add('in');
+  });
+  return frag;
+}
+function closeModal(node){
+  node.querySelector('.modal')?.classList.remove('in');
+  node.querySelector('.modal-backdrop')?.classList.remove('in');
+  setTimeout(()=> node.remove(), 220);
+}
+function openJoinConfirm(url){
+  const tpl = `
+  <div class="modal-shell" style="pointer-events:auto">
+    <div class="modal-backdrop"></div>
+    <div class="modal glass" role="dialog" aria-modal="true" aria-label="外部跳转确认">
+      <h3>即将离开本站</h3>
+      <p>你将打开 Telegram 链接：<br><code>${url}</code></p>
+      <div class="modal-actions">
+        <button class="btn" data-role="cancel">取消</button>
+        <button class="btn primary" data-role="go">继续前往</button>
+      </div>
+    </div>
+  </div>`;
+  const node = createModal(tpl);
+  node.querySelector('[data-role="cancel"]')?.addEventListener('click', () => closeModal(node));
+  node.querySelector('.modal-backdrop')?.addEventListener('click', () => closeModal(node));
+  node.querySelector('[data-role="go"]')?.addEventListener('click', () => {
+    closeModal(node);
+    // 新窗口打开更安全；若想同页跳转可改为 location.href = url
+    window.open(url, '_blank', 'noopener');
+  });
+}
+function setupJoinConfirm(){
+  document.querySelectorAll('a.join-confirm').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      const url = a.dataset.href || a.href;
+      openJoinConfirm(url);
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', setupJoinConfirm);
