@@ -8,9 +8,7 @@ layout: default
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time>
       {% if page.tags %}
         · <span class="tags">
-          {% for t in page.tags %}
-            <em>#{{ t }}</em>{% unless forloop.last %} {% endunless %}
-          {% endfor %}
+          {% for t in page.tags %}<em>#{{ t }}</em>{% unless forloop.last %} {% endunless %}{% endfor %}
         </span>
       {% endif %}
     </div>
