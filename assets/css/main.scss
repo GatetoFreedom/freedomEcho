@@ -10,6 +10,9 @@
   --ease-smooth: cubic-bezier(.22,1,.36,1);
   --ease-bouncy: cubic-bezier(.18,.9,.22,1.08);
   --t-quick: .18s; --t-base: .34s; --t-slow: .72s;
+  /* 灵动岛专用曲线与时长（新增） */
+  --ease-island: cubic-bezier(.22,.9,.2,1);
+  --t-island: .46s;
 }
 
 /* 主题（暗色优先） */
@@ -87,20 +90,36 @@ a{color:var(--brand); text-decoration:none}
 }
 
 /* 灵动岛式导航（上品牌、下导航） */
+/* —— 使用 clip-path inset 实现“从四周向内吸收”的收缩/展开 —— */
 .site-header.island{
   position:sticky; top:12px; z-index:20;
   margin:12px auto; width:min(100% - 24px, var(--maxw));
-  transition: transform var(--t-slow) var(--ease-smooth), border-radius var(--t-base) var(--ease-out), padding var(--t-base) var(--ease-out);
+  /* 吸收式缩放：通过 inset + 圆角动态变化来“向内收缩” */
+  --iInset: 0px;          /* 四周内收的量 */
+  --iRadius: 18px;        /* 圆角半径 */
+  clip-path: inset(var(--iInset) round var(--iRadius));
+  transition:
+    clip-path var(--t-island) var(--ease-island),
+    transform var(--t-island) var(--ease-island),
+    padding var(--t-island) var(--ease-island),
+    border-radius var(--t-island) var(--ease-island),
+    box-shadow .34s var(--ease-out);
 }
 .island-inner{padding:12px 14px; display:grid; gap:8px}
 .island-brand{display:flex; align-items:center; justify-content:center; position:relative}
 .brand{font-weight:760; letter-spacing:.3px; font-size:17px}
+
+/* 按钮：状态提示 + 旋转过渡（hint-up/ hint-down 由 JS 切换） */
 .island-toggle{
   position:absolute; right:6px; top:4px; width:28px; height:28px;
   border-radius:999px; border:1px solid var(--stroke); background:var(--glass-strong); color:var(--text);
-  opacity:.88; transition: opacity var(--t-quick) var(--ease-out), transform var(--t-quick) var(--ease-out);
+  display:flex; align-items:center; justify-content:center;
+  transition: transform .22s var(--ease-out), background .22s var(--ease-out), border-color .22s var(--ease-out);
 }
-.island-toggle:hover{opacity:1; transform:scale(1.06)}
+.island-toggle:hover{ transform: scale(1.06) }
+.island-toggle.hint-up{ transform: rotate(180deg) }  /* 收起态：箭头向上 */
+.island-toggle.hint-down{ transform: rotate(0deg) }   /* 展开态：箭头向下 */
+
 .island-nav{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; transition: opacity var(--t-base) var(--ease-out), max-height var(--t-base) var(--ease-out)}
 .nav-link{
   display:inline-block; padding:8px 12px; border-radius:999px;
@@ -111,10 +130,22 @@ a{color:var(--brand); text-decoration:none}
 }
 .nav-link:hover{ transform:translateY(-1px); background:var(--glass-strong)}
 .nav-link.join{ background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#001018; border-color:transparent; font-weight:700}
-.island.compact{ transform:translateY(-4px) scale(.86); border-radius:22px }
+
+/* 收起态：向内“吸收”到更小的胶囊，并略微上移+缩放 */
+.island.compact{
+  --iInset: 10px;            /* 四周向内收缩 */
+  --iRadius: 22px;           /* 胶囊更圆 */
+  transform:translateY(-6px) scale(.90);
+}
 .island.compact .island-inner{ padding:8px 12px }
 .island.compact .island-nav{ opacity:0; max-height:0; overflow:hidden; pointer-events:none }
-.island.expanded{ transform:translateY(0) scale(1) }
+
+/* 展开态：回到大形态 */
+.island.expanded{
+  --iInset: 0px;
+  --iRadius: 18px;
+  transform:translateY(0) scale(1);
+}
 .island.expanded .island-nav{ opacity:1; max-height:160px }
 
 /* 页面容器 */
