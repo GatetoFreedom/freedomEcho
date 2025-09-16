@@ -45,20 +45,20 @@ a{color:var(--brand); text-decoration:none}
 /* 背景：四张壁纸自适配 + 高斯模糊 + 变暗（质量优先） */
 .bg-img{
   position:fixed; inset:-6vmax; z-index:-3; /* 外扩，避免 blur 剪裁 */
-  background:url("/assets/img/ipados26-dark.jpg") center / cover fixed no-repeat;
+  background:url("/assets/img/ipados26-dark.png") center / cover fixed no-repeat;
   filter: blur(46px) brightness(.78) saturate(118%) contrast(104%); /* 高质量模糊 + 适度变暗 */
   transform: scale(1.12); will-change: filter, transform;  /* 放大防边缘 */
 }
 @media (prefers-color-scheme: light){
-  .bg-img{ background-image:url("/assets/img/ipados26-light.jpg");
+  .bg-img{ background-image:url("/assets/img/ipados26-light.png");
     filter: blur(38px) brightness(.92) saturate(112%) contrast(102%); }
 }
 /* 竖屏覆盖 */
 @media (orientation: portrait) and (prefers-color-scheme: dark){
-  .bg-img{ background-image:url("/assets/img/ios26-dark.jpg"); }
+  .bg-img{ background-image:url("/assets/img/ios26-dark.png"); }
 }
 @media (orientation: portrait) and (prefers-color-scheme: light){
-  .bg-img{ background-image:url("/assets/img/ios26-light.jpg"); }
+  .bg-img{ background-image:url("/assets/img/ios26-light.png"); }
 }
 
 /* 柔光罩：再压一层柔光/高光，保证观感 */
