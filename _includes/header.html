@@ -8,7 +8,8 @@
       <a class="nav-link" href="{{ '/announcements/' | relative_url }}">公告</a>
       <a class="nav-link" href="{{ '/rules/' | relative_url }}">群规</a>
       <a class="nav-link" href="{{ '/about/' | relative_url }}">关于</a>
-      <a class="nav-link join" href="https://t.me/gatetofreedom" target="_blank" rel="noopener">加入我们</a>
+      <!-- 加入我们：使用 join-confirm 类，JS 拦截二次确认 -->
+      <a class="nav-link join join-confirm" href="https://t.me/gatetofreedom" data-href="https://t.me/gatetofreedom">加入我们</a>
     </nav>
   </div>
 </header>
