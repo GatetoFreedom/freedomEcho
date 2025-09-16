@@ -1,0 +1,36 @@
+---
+layout: default
+title: 公告
+pagination:
+  enabled: true
+  collection: posts
+  per_page: 12
+  permalink: '/announcements/page/:num/'
+  sort_field: 'date'
+  sort_reverse: true
+---
+
+<h1>公告归档</h1>
+<p class="muted">汇总所有公告（按时间倒序）。</p>
+
+<div class="grid ann-grid">
+{% for post in pagination.posts %}
+  <article class="card glass tilt">
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+    <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+  </article>
+{% endfor %}
+</div>
+
+<nav class="pager">
+  {% if pagination.previous %}
+    <a class="btn pager-link" rel="prev" href="{{ pagination.previous.url | relative_url }}">上一页</a>
+  {% endif %}
+
+  <span class="pager-meta">第 {{ pagination.page }} / {{ pagination.total_pages }} 页</span>
+
+  {% if pagination.next %}
+    <a class="btn pager-link" rel="next" href="{{ pagination.next.url | relative_url }}">下一页</a>
+  {% endif %}
+</nav>
