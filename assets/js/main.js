@@ -19,68 +19,72 @@ if (bar) {
   onScroll();
 }
 
-/* ========= 灵动岛：速度/加速度驱动的自动展开/收起 + 按钮临时展开 ========= */
+/* ========= 灵动岛：速度/加速度驱动 + 按钮“临时展开/临时收起” + 切换流光 ========= */
 const island = document.querySelector('.island');
 const toggleBtn = document.querySelector('.island-toggle');
 
 const IslandCtrl = (() => {
-  // 阈值（px/ms、px/ms^2），按触控板/手机均衡调校
   const TH = {
-    vExpand: -0.55,     // 向上快滑（负速度）→ 展开
+    vExpand: -0.55,
     aExpand: -0.0045,
-    vCollapse: 0.55,    // 向下快滑（正速度）→ 收起
+    vCollapse: 0.55,
     aCollapse: 0.0045,
-    hysteresis: 240,    // 状态切换“消抖”毫秒
-    manualGrace: 160    // 按钮临时展开后，短暂保护不立刻被微小下滑打断
+    hysteresis: 240,
+    manualGrace: 220   // 按钮切换后的保护时间，避免立刻被微小滚动反转
   };
 
-  let isExpanded = true;            // 初始展开
+  let isExpanded = true;
   let lastSwitch = 0;
   let lastY = window.scrollY;
   let lastT = performance.now();
-  let vPrev = 0;                    // 上一瞬时速度（px/ms）
-  let vEMA = 0;                     // 速度指数平滑
-  let aEMA = 0;                     // 加速度指数平滑
-  let manualUntil = 0;              // 按钮触发后的保护时间戳
+  let vPrev = 0;
+  let vEMA = 0;
+  let aEMA = 0;
+  let manualUntil = 0;
 
-  // 设置状态（只在需要时切换）
-  function setExpanded(next, reason = 'auto') {
+  function flashHint(){
+    // 给导航加一次流光提示（CSS .island.flash::after）
+    island?.classList.add('flash');
+    setTimeout(() => island?.classList.remove('flash'), 900);
+  }
+
+  function updateToggleHint(){
+    // 展开 → 按钮朝下（hint-down）；收起 → 按钮朝上（hint-up）
+    toggleBtn?.classList.toggle('hint-down', isExpanded);
+    toggleBtn?.classList.toggle('hint-up', !isExpanded);
+  }
+
+  function setExpanded(next, reason='auto'){
     if (!island) return;
     if (next === isExpanded) return;
 
     const now = performance.now();
-    if (now - lastSwitch < TH.hysteresis && reason === 'auto') return; // 消抖：自动切换不连跳
+    if (reason === 'auto' && now - lastSwitch < TH.hysteresis) return;
 
     isExpanded = next;
     island.classList.toggle('expanded', isExpanded);
     island.classList.toggle('compact', !isExpanded);
-
-    // 按钮朝向提示（下拉=展开，收起=上拉）
-    toggleBtn?.classList.toggle('hint-up', !isExpanded);
-    toggleBtn?.classList.toggle('hint-down', isExpanded);
-
+    updateToggleHint();
+    flashHint();                 // 切换时触发一次流光
     lastSwitch = now;
   }
 
-  function handleScroll() {
+  function handleScroll(){
     if (!island) return;
     const t = performance.now();
     const y = window.scrollY;
-    const dt = Math.max(8, t - lastT);              // 避免除以 0，最小 8ms
+    const dt = Math.max(8, t - lastT);
     const dy = y - lastY;
 
-    const vInst = dy / dt;                          // 瞬时速度（px/ms）
-    const aInst = (vInst - vPrev) / dt;             // 瞬时加速度
+    const vInst = dy / dt;
+    const aInst = (vInst - vPrev) / dt;
 
-    // 指数平滑（速度更稳，加速度更敏）
+    // 指数平滑
     vEMA = 0.25 * vInst + 0.75 * vEMA;
     aEMA = 0.5  * aInst + 0.5  * aEMA;
 
-    // 判定逻辑：上划足够快/加速度足够强 → 展开；下滑足够快/强 → 收起
     const now = performance.now();
     const manualGuard = now < manualUntil;
-
-    // 贴近顶部也默认展开，更自然
     const nearTop = y <= 24;
 
     if (!manualGuard) {
@@ -94,24 +98,25 @@ const IslandCtrl = (() => {
     lastY = y; lastT = t; vPrev = vInst;
   }
 
-  function manualExpandOnce() {
-    // 立即展开，但不是“锁死”；若下滑达到阈值，仍会自动收起
-    setExpanded(true, 'manual');
+  function manualToggle(){
+    // 按钮：若当前展开 → 临时收起；若当前收起 → 临时展开
+    setExpanded(!isExpanded, 'manual');
     manualUntil = performance.now() + TH.manualGrace;
 
-    // 按钮微动效：轻微缩放 + 回弹
+    // 按钮微反馈
     toggleBtn?.animate(
       [{ transform: 'scale(0.94)' }, { transform: 'scale(1)' }],
       { duration: 160, easing: 'ease-out' }
     );
   }
 
-  // 绑定事件
   document.addEventListener('scroll', handleScroll, { passive: true });
-  toggleBtn?.addEventListener('click', (e) => { e.preventDefault(); manualExpandOnce(); });
+  toggleBtn?.addEventListener('click', (e) => { e.preventDefault(); manualToggle(); });
 
-  // 初始状态：进入页面时，如果不在顶部也先展开一次，避免“收起”突兀
+  // 初始：进入页面时默认展开，按钮提示同步
   setExpanded(true, 'init');
+  updateToggleHint();
+
   return { setExpanded };
 })();
 
@@ -130,8 +135,7 @@ function setupPageTransitions() {
     const href = a.getAttribute('href') || '';
     if (href.startsWith('#')) return false;
     const url = new URL(href, window.location.href);
-    // 排除“加入我们”确认按钮
-    if (a.classList.contains('join-confirm')) return false;
+    if (a.classList.contains('join-confirm')) return false; // “加入我们”由二次确认处理
     return url.origin === origin;
   });
 
@@ -191,7 +195,7 @@ document.addEventListener('DOMContentLoaded', setupPageTransitions);
 /* ========= 新页进场：瀑布级联 ========= */
 function stagedEnter(){
   const raw = sessionStorage.getItem('xfer');
-  if (!raw) return; // 直接打开/刷新不做转场
+  if (!raw) return;
 
   try{
     const {ox, oy} = JSON.parse(raw);
@@ -201,14 +205,14 @@ function stagedEnter(){
 
   document.body.classList.add('pre-enter');
 
-  // 卡片级联延时（每 60ms 递增）
+  // 卡片级联延时
   document.querySelectorAll('.grid .card').forEach((el, i) => el.style.setProperty('--d', (i*60)+'ms'));
   // 文章正文轻度级联
   document.querySelectorAll('.post .post-body > *').forEach((el, i) => el.style.setProperty('--i', i+1));
 
   requestAnimationFrame(() => {
     document.body.classList.add('enter');
-    document.body.classList.remove('pre-enter');   // 保证正文可见
+    document.body.classList.remove('pre-enter');
     sessionStorage.removeItem('xfer');
   });
 }
@@ -255,7 +259,7 @@ if (sheen){
   }, { passive: true });
 }
 
-/* ========= “加入我们”二次确认（保留） ========= */
+/* ========= “加入我们”二次确认 ========= */
 function createModal(html){
   const root = document.getElementById('modal-root');
   const wrap = document.createElement('div');
