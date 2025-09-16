@@ -1,4 +1,4 @@
-name: Build and Deploy Jekyll to Pages
+name: Build & Deploy (Jekyll → GitHub Pages)
 
 on:
   push:
@@ -20,28 +20,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Pages
-        id: pages
         uses: actions/configure-pages@v5
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "3.2"
-          bundler-cache: false  # 禁用 Bundler 缓存，避开 Actions 缓存服务
-
-      - name: Install dependencies
-        run: |
-          bundle config set path 'vendor/bundle'
-          bundle install --jobs 4 --retry 3
-
       - name: Build with Jekyll
-        env:
-          JEKYLL_ENV: production
-        run: |
-          bundle exec jekyll build --trace --baseurl "${{ steps.pages.outputs.base_path }}"
-
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: .
+          destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
