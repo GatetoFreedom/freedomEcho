@@ -53,12 +53,12 @@ document.querySelector('.brand')?.addEventListener('click', (e) => {
   }
 });
 
-/* ========= 选取与当前环境匹配的壁纸 ========= */
+/* ========= 选取与当前环境匹配的壁纸（四张） ========= */
 function pickBgImage(){
   const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const portrait = window.matchMedia('(orientation: portrait)').matches;
-  if (portrait) return dark ? '/assets/img/ios26-dark.jpg' : '/assets/img/ios26-light.jpg';
-  return dark ? '/assets/img/ipados26-dark.jpg' : '/assets/img/ipados26-light.jpg';
+  if (portrait) return dark ? '/assets/img/ios26-dark.png' : '/assets/img/ios26-light.png';
+  return dark ? '/assets/img/ipados26-dark.png' : '/assets/img/ipados26-light.png';
 }
 
 /* ========= 页面切换：从点击按钮位置飞出覆盖层 ========= */
@@ -107,7 +107,7 @@ function animateAndGo(url, rect) {
   // 旧页淡出
   document.querySelector('main')?.classList.add('fade-out');
 
-  // 保存归一化坐标给新页入场（用于必要时的中心参考）
+  // 保存归一化坐标给新页入场
   sessionStorage.setItem('xfer', JSON.stringify({ ox: cx / window.innerWidth, oy: cy / window.innerHeight }));
 
   xferRoot.appendChild(ov);
@@ -119,26 +119,33 @@ document.addEventListener('DOMContentLoaded', setupPageTransitions);
 /* ========= 新页进场：分组分层（Zoom/Rise/卡片级联） ========= */
 function stagedEnter(){
   const raw = sessionStorage.getItem('xfer');
-  if (!raw) return;
+  if (!raw) return; // 直接打开/刷新时不做转场
+
   try{
     const {ox, oy} = JSON.parse(raw);
     document.body.style.setProperty('--ox', `${ox * window.innerWidth}px`);
     document.body.style.setProperty('--oy', `${oy * window.innerHeight}px`);
   }catch(_){}
 
-  // 初始隐藏 → 触发入场动画
+  // 先隐藏，再触发入场动画
   document.body.classList.add('pre-enter');
-  // 卡片级联延时
+
+  // 级联延时
   document.querySelectorAll('.grid .card').forEach((el, i) => el.style.setProperty('--d', (i*60)+'ms'));
-  // 文章内容轻度级联
   document.querySelectorAll('.post .post-body > *').forEach((el, i) => el.style.setProperty('--i', i+1));
 
   requestAnimationFrame(() => {
     document.body.classList.add('enter');
+    document.body.classList.remove('pre-enter');   // ★ 关键：移除，避免正文一直透明
     sessionStorage.removeItem('xfer');
   });
 }
 document.addEventListener('DOMContentLoaded', stagedEnter);
+
+// 兜底：某些浏览器历史缓存返回时，确保没有残留 pre-enter
+window.addEventListener('pageshow', () => {
+  document.body.classList.remove('pre-enter');
+});
 
 /* ========= 卡片 Tilt（视差倾斜） ========= */
 function setupTilt() {
