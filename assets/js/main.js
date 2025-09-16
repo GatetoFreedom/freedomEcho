@@ -19,39 +19,101 @@ if (bar) {
   onScroll();
 }
 
-/* ========= 灵动岛：下滑收缩，上滑/点击展开 ========= */
+/* ========= 灵动岛：速度/加速度驱动的自动展开/收起 + 按钮临时展开 ========= */
 const island = document.querySelector('.island');
-const toggle = document.querySelector('.island-toggle');
-let lockedExpand = false;
+const toggleBtn = document.querySelector('.island-toggle');
 
-function updateIslandByScroll() {
-  if (!island) return;
-  const y = window.scrollY || 0;
-  if (lockedExpand) return;
-  if (y > 100) island.classList.add('compact');
-  else island.classList.remove('compact');
-}
-document.addEventListener('scroll', updateIslandByScroll, { passive: true });
-document.addEventListener('DOMContentLoaded', updateIslandByScroll);
+const IslandCtrl = (() => {
+  // 阈值（px/ms、px/ms^2），按触控板/手机均衡调校
+  const TH = {
+    vExpand: -0.55,     // 向上快滑（负速度）→ 展开
+    aExpand: -0.0045,
+    vCollapse: 0.55,    // 向下快滑（正速度）→ 收起
+    aCollapse: 0.0045,
+    hysteresis: 240,    // 状态切换“消抖”毫秒
+    manualGrace: 160    // 按钮临时展开后，短暂保护不立刻被微小下滑打断
+  };
 
-toggle?.addEventListener('click', (e) => {
-  e.stopPropagation();
-  const expanded = island.classList.toggle('expanded');
-  lockedExpand = expanded;
-  if (expanded) island.classList.remove('compact');
-});
-document.addEventListener('click', (e) => {
-  if (!island) return;
-  if (island.classList.contains('expanded') && !island.contains(e.target)) {
-    island.classList.remove('expanded'); lockedExpand = false; updateIslandByScroll();
+  let isExpanded = true;            // 初始展开
+  let lastSwitch = 0;
+  let lastY = window.scrollY;
+  let lastT = performance.now();
+  let vPrev = 0;                    // 上一瞬时速度（px/ms）
+  let vEMA = 0;                     // 速度指数平滑
+  let aEMA = 0;                     // 加速度指数平滑
+  let manualUntil = 0;              // 按钮触发后的保护时间戳
+
+  // 设置状态（只在需要时切换）
+  function setExpanded(next, reason = 'auto') {
+    if (!island) return;
+    if (next === isExpanded) return;
+
+    const now = performance.now();
+    if (now - lastSwitch < TH.hysteresis && reason === 'auto') return; // 消抖：自动切换不连跳
+
+    isExpanded = next;
+    island.classList.toggle('expanded', isExpanded);
+    island.classList.toggle('compact', !isExpanded);
+
+    // 按钮朝向提示（下拉=展开，收起=上拉）
+    toggleBtn?.classList.toggle('hint-up', !isExpanded);
+    toggleBtn?.classList.toggle('hint-down', isExpanded);
+
+    lastSwitch = now;
   }
-});
-document.querySelector('.brand')?.addEventListener('click', (e) => {
-  if (island?.classList.contains('compact')) {
-    e.preventDefault();
-    island.classList.add('expanded'); lockedExpand = true;
+
+  function handleScroll() {
+    if (!island) return;
+    const t = performance.now();
+    const y = window.scrollY;
+    const dt = Math.max(8, t - lastT);              // 避免除以 0，最小 8ms
+    const dy = y - lastY;
+
+    const vInst = dy / dt;                          // 瞬时速度（px/ms）
+    const aInst = (vInst - vPrev) / dt;             // 瞬时加速度
+
+    // 指数平滑（速度更稳，加速度更敏）
+    vEMA = 0.25 * vInst + 0.75 * vEMA;
+    aEMA = 0.5  * aInst + 0.5  * aEMA;
+
+    // 判定逻辑：上划足够快/加速度足够强 → 展开；下滑足够快/强 → 收起
+    const now = performance.now();
+    const manualGuard = now < manualUntil;
+
+    // 贴近顶部也默认展开，更自然
+    const nearTop = y <= 24;
+
+    if (!manualGuard) {
+      if (vEMA <= TH.vExpand || (vEMA < -0.25 && aEMA <= TH.aExpand) || nearTop) {
+        setExpanded(true, 'auto');
+      } else if (vEMA >= TH.vCollapse || (vEMA > 0.25 && aEMA >= TH.aCollapse)) {
+        setExpanded(false, 'auto');
+      }
+    }
+
+    lastY = y; lastT = t; vPrev = vInst;
   }
-});
+
+  function manualExpandOnce() {
+    // 立即展开，但不是“锁死”；若下滑达到阈值，仍会自动收起
+    setExpanded(true, 'manual');
+    manualUntil = performance.now() + TH.manualGrace;
+
+    // 按钮微动效：轻微缩放 + 回弹
+    toggleBtn?.animate(
+      [{ transform: 'scale(0.94)' }, { transform: 'scale(1)' }],
+      { duration: 160, easing: 'ease-out' }
+    );
+  }
+
+  // 绑定事件
+  document.addEventListener('scroll', handleScroll, { passive: true });
+  toggleBtn?.addEventListener('click', (e) => { e.preventDefault(); manualExpandOnce(); });
+
+  // 初始状态：进入页面时，如果不在顶部也先展开一次，避免“收起”突兀
+  setExpanded(true, 'init');
+  return { setExpanded };
+})();
 
 /* ========= 选取与当前环境匹配的壁纸（四张） ========= */
 function pickBgImage(){
@@ -75,11 +137,12 @@ function setupPageTransitions() {
 
   links.forEach(a => {
     a.addEventListener('click', (e) => {
+      const target = e.currentTarget;
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      const href = a.getAttribute('href'); if (!href) return;
+      const href = target.getAttribute('href'); if (!href) return;
 
       // 公告分页：翻页动画
-      if (a.closest('.pager')) {
+      if (target.closest('.pager')) {
         e.preventDefault();
         const grid = document.querySelector('.ann-grid');
         if (grid) grid.classList.add('flip-out');
@@ -88,7 +151,7 @@ function setupPageTransitions() {
       }
 
       e.preventDefault();
-      const rect = a.getBoundingClientRect();
+      const rect = target.getBoundingClientRect();
       animateAndGo(new URL(href, window.location.href).toString(), rect);
     });
   });
@@ -121,7 +184,7 @@ function animateAndGo(url, rect) {
 
   xferRoot.appendChild(ov);
   requestAnimationFrame(() => ov.classList.add('in'));
-  setTimeout(() => { window.location.assign(url); }, 760);
+  setTimeout(() => { window.location.assign(url); }, 780);
 }
 document.addEventListener('DOMContentLoaded', setupPageTransitions);
 
@@ -145,7 +208,7 @@ function stagedEnter(){
 
   requestAnimationFrame(() => {
     document.body.classList.add('enter');
-    document.body.classList.remove('pre-enter');   // 关键：移除，保证正文可见
+    document.body.classList.remove('pre-enter');   // 保证正文可见
     sessionStorage.removeItem('xfer');
   });
 }
@@ -169,7 +232,7 @@ function setupTilt() {
     });
     card.addEventListener('mouseleave', () => {
       if (raf) cancelAnimationFrame(raf);
-      card.style.transition = 'transform .28s var(--ease-bouncy)';
+      card.style.transition = 'transform .28s cubic-bezier(.18,.9,.22,1.08)';
       reset(); setTimeout(()=>{ card.style.transition=''; }, 280);
     });
   });
@@ -192,7 +255,7 @@ if (sheen){
   }, { passive: true });
 }
 
-/* ========= “加入我们”二次确认 ========= */
+/* ========= “加入我们”二次确认（保留） ========= */
 function createModal(html){
   const root = document.getElementById('modal-root');
   const wrap = document.createElement('div');
@@ -228,7 +291,6 @@ function openJoinConfirm(url){
   node.querySelector('.modal-backdrop')?.addEventListener('click', () => closeModal(node));
   node.querySelector('[data-role="go"]')?.addEventListener('click', () => {
     closeModal(node);
-    // 新窗口打开更安全；若想同页跳转可改为 location.href = url
     window.open(url, '_blank', 'noopener');
   });
 }
