@@ -1,25 +1,19 @@
 title: Gate to Freedom
 description: 公开透明的群公告与治理信息归档（占位文案）
 url: https://gate2freedom.com
-baseurl: ""               # 顶级域直挂；如挂子目录再改
+baseurl: ""
 lang: zh-CN
 timezone: Asia/Shanghai
 
-# 文章链接格式
 permalink: /:categories/:year/:month/:day/:title/
 
-# 插件
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-paginate
+  - jekyll-paginate-v2     # ← v2 分页插件
 
-# 公告分页
-paginate: 12
-paginate_path: "/announcements/page:num/"
-
-# 让所有 _posts 默认用 post 布局
+# 所有 _posts 默认使用 post 布局
 defaults:
   - scope:
       path: ""
@@ -27,7 +21,7 @@ defaults:
     values:
       layout: post
 
-# 导航（用于头部导航渲染）
+# 顶部导航（header 用）
 nav:
   - name: 公告
     url: /announcements/
@@ -36,6 +30,5 @@ nav:
   - name: 关于
     url: /about/
 
-# Feed（可选）
 feed:
   path: feed.xml
