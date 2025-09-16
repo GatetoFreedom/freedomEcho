@@ -206,7 +206,8 @@ a{color:var(--brand); text-decoration:none}
 main.fade-out{ opacity:.05; filter: blur(8px); transition: opacity .38s var(--ease-out), filter .38s var(--ease-out) }
 
 /* ============ 新页进场（读取上页点击坐标，分组入场） ============ */
-body.pre-enter main{ opacity:0 } /* 初始隐藏，避免闪烁 */
+body.pre-enter main{ opacity:0 }                 /* 初始隐藏，避免闪烁 */
+body.enter main{ opacity:1 !important; filter:none !important }   /* ★ 兜底显示 */
 body.enter .hero{ animation: enterZoom .56s var(--ease-smooth) both }
 body.enter .post{ animation: enterZoom .56s var(--ease-smooth) both }
 body.enter .post .post-body > *{ animation: enterRise .48s var(--ease-out) both; animation-delay: calc(.04s * var(--i, 1)) }
