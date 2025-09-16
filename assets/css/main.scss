@@ -3,13 +3,13 @@
 
 /* ========= Liquid Glass + High-Quality Blur + Heroic Transitions ========= */
 
-/* 统一速度与曲线（更丝滑的时序） */
+/* 统一速度与曲线 */
 :root{
   --ease-out: cubic-bezier(.2,.8,.2,1);
   --ease-in: cubic-bezier(.4,0,.2,1);
   --ease-smooth: cubic-bezier(.22,1,.36,1);
   --ease-bouncy: cubic-bezier(.18,.9,.22,1.08);
-  --t-quick: .18s; --t-base: .34s; --t-slow: .62s;
+  --t-quick: .18s; --t-base: .34s; --t-slow: .72s;
 }
 
 /* 主题（暗色优先） */
@@ -42,18 +42,16 @@ a{color:var(--brand); text-decoration:none}
 .skip{position:absolute;left:-9999px}
 .skip:focus{left:12px;top:12px;padding:6px 10px;background:#fff;color:#000;border-radius:8px}
 
-/* 背景：四张壁纸自适配 + 高斯模糊 + 变暗（质量优先） */
+/* 背景（横/竖 × 深/浅）+ 高斯模糊 + 变暗 */
 .bg-img{
-  position:fixed; inset:-6vmax; z-index:-3; /* 外扩，避免 blur 剪裁 */
+  position:fixed; inset:-6vmax; z-index:-3;
   background:url("/assets/img/ipados26-dark.png") center / cover fixed no-repeat;
-  filter: blur(46px) brightness(.78) saturate(118%) contrast(104%); /* 高质量模糊 + 适度变暗 */
-  transform: scale(1.12); will-change: filter, transform;  /* 放大防边缘 */
+  filter: blur(46px) brightness(.78) saturate(118%) contrast(104%);
+  transform: scale(1.12); will-change: filter, transform;
 }
 @media (prefers-color-scheme: light){
-  .bg-img{ background-image:url("/assets/img/ipados26-light.png");
-    filter: blur(38px) brightness(.92) saturate(112%) contrast(102%); }
+  .bg-img{ background-image:url("/assets/img/ipados26-light.png"); filter: blur(38px) brightness(.92) saturate(112%) contrast(102%); }
 }
-/* 竖屏覆盖 */
 @media (orientation: portrait) and (prefers-color-scheme: dark){
   .bg-img{ background-image:url("/assets/img/ios26-dark.png"); }
 }
@@ -61,7 +59,7 @@ a{color:var(--brand); text-decoration:none}
   .bg-img{ background-image:url("/assets/img/ios26-light.png"); }
 }
 
-/* 柔光罩：再压一层柔光/高光，保证观感 */
+/* 柔光罩 */
 .bg-sheen{
   position:fixed; inset:-2vmax; z-index:-2; pointer-events:none;
   background:
@@ -80,17 +78,15 @@ a{color:var(--brand); text-decoration:none}
   }
 }
 
-/* 液态玻璃容器 */
+/* 液态玻璃容器（导航/卡片/页脚） */
 .glass{
   background:var(--glass);
   -webkit-backdrop-filter:saturate(180%) blur(22px);
   backdrop-filter:saturate(180%) blur(22px);
-  border:1px solid var(--stroke);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
+  border:1px solid var(--stroke); border-radius:var(--radius); box-shadow:var(--shadow);
 }
 
-/* 灵动岛导航：上品牌，下导航；下滑收缩，上滑/点击展开 */
+/* 灵动岛式导航（上品牌、下导航） */
 .site-header.island{
   position:sticky; top:12px; z-index:20;
   margin:12px auto; width:min(100% - 24px, var(--maxw));
@@ -124,14 +120,22 @@ a{color:var(--brand); text-decoration:none}
 /* 页面容器 */
 .page{padding:28px 0 40px}
 
-/* Hero 与按钮 */
-.hero{display:grid; gap:14px; padding:18px 0 8px}
-.hero .subtitle{color:var(--muted); margin:0}
-.hero h1{
-  margin:0; line-height:1.18; font-size:clamp(28px,6vw,46px);
+/* 首页标题“波光” */
+.title-wave{
+  position:relative; margin:0; line-height:1.18; font-size:clamp(28px,6vw,46px);
   background:linear-gradient(95deg, var(--brand), var(--brand-2));
   -webkit-background-clip:text; background-clip:text; color:transparent;
 }
+.title-wave::after{
+  content:""; position:absolute; inset:-6px -10px; pointer-events:none;
+  background:linear-gradient(120deg, transparent 20%, rgba(255,255,255,.65) 50%, transparent 80%);
+  background-size:200% 100%; filter:blur(6px); opacity:.55; mix-blend-mode:overlay;
+  animation: shimmer 3.6s linear infinite;
+}
+@keyframes shimmer{ 0%{background-position:-100% 0} 100%{background-position:200% 0} }
+
+.hero{display:grid; gap:14px; padding:18px 0 8px}
+.hero .subtitle{color:var(--muted); margin:0}
 .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:8px}
 .btn{
   display:inline-block; padding:10px 16px; border-radius:12px;
@@ -141,7 +145,7 @@ a{color:var(--brand); text-decoration:none}
 .btn.primary{ background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#001018; border-color:transparent; font-weight:700}
 .btn:hover{ transform:translateY(-1px) }
 
-/* 卡片栅格 + Tilt */
+/* 卡片栅格 + Tilt + 瀑布级联 */
 .grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); margin:18px 0 20px}
 .card{
   padding:18px; position:relative; overflow:hidden; border-radius:var(--radius);
@@ -157,6 +161,10 @@ a{color:var(--brand); text-decoration:none}
 .card time{color:var(--muted); font-size:13px}
 .card p{margin:8px 0 0; color:var(--muted)}
 .card:hover{border-color:color-mix(in oklab, var(--stroke), white 20%)}
+
+/* about/rules 卡片化 */
+.section-grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); margin:12px 0 20px}
+.section-card{padding:18px}
 
 /* 公告详情 */
 .post{padding:22px}
@@ -182,43 +190,41 @@ a{color:var(--brand); text-decoration:none}
 .reveal.in{opacity:1; transform:translateY(0)}
 @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none} }
 
-/* ============ 页面切换：飞出覆盖层（带壁纸层，强模糊+变暗） ============ */
+/* ============ 页面切换：clip-path 水滴扩散 ============ */
 #xfer-root{ position:fixed; inset:0; z-index:60; pointer-events:none }
 .page-xfer{
-  position:fixed; inset:0; transform-origin: var(--ox) var(--oy);
-  border-radius:28px; opacity:0; transform:scale(.02);
-  transition: transform var(--t-slow) var(--ease-smooth), opacity .28s var(--ease-out), border-radius var(--t-slow) var(--ease-out);
-  filter:saturate(120%);
-}
-.page-xfer::before{
-  /* glow 高光层（不依赖图像） */
-  content:""; position:absolute; inset:0; pointer-events:none;
-  background: radial-gradient( 800px 800px at var(--ox) var(--oy), rgba(255,255,255,.20) 0%, rgba(255,255,255,.08) 30%, rgba(255,255,255,0) 65% );
-  mix-blend-mode:screen;
+  position:fixed; inset:0; --ox:50vw; --oy:50vh; --R:0px;
+  clip-path: circle(0px at var(--ox) var(--oy));
+  opacity:0; background:transparent;
+  transition: clip-path var(--t-slow) var(--ease-smooth), opacity .28s var(--ease-out);
+  will-change: clip-path, opacity;
 }
 .page-xfer-img{
   position:absolute; inset:-6vmax; background-position:center; background-size:cover; background-repeat:no-repeat;
   filter: blur(42px) brightness(.82) saturate(118%) contrast(104%); transform:scale(1.10);
 }
-.page-xfer.in{ opacity:1; transform:scale(1); border-radius:0 }
+.page-xfer::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background: radial-gradient(900px 900px at var(--ox) var(--oy), rgba(255,255,255,.24) 0%, rgba(255,255,255,.12) 24%, rgba(255,255,255,0) 60%);
+  mix-blend-mode:screen; opacity:.85; transition: opacity var(--t-slow) var(--ease-smooth);
+}
+.page-xfer.in{ clip-path: circle(var(--R) at var(--ox) var(--oy)); opacity:1; }
 
 /* 旧页淡出 */
 main.fade-out{ opacity:.05; filter: blur(8px); transition: opacity .38s var(--ease-out), filter .38s var(--ease-out) }
 
-/* ============ 新页进场（读取上页点击坐标，分组入场） ============ */
-body.pre-enter main{ opacity:0 }                 /* 初始隐藏，避免闪烁 */
-body.enter main{ opacity:1 !important; filter:none !important }   /* ★ 兜底显示 */
+/* ============ 新页进场（瀑布级联） ============ */
+body.pre-enter main{ opacity:0 }
+body.enter main{ opacity:1 !important; filter:none !important }
 body.enter .hero{ animation: enterZoom .56s var(--ease-smooth) both }
 body.enter .post{ animation: enterZoom .56s var(--ease-smooth) both }
 body.enter .post .post-body > *{ animation: enterRise .48s var(--ease-out) both; animation-delay: calc(.04s * var(--i, 1)) }
 body.enter .grid .card{ animation: cardIn .62s var(--ease-bouncy) both; animation-delay: var(--d, 0ms) }
-
-/* 关键帧：Zoom/Rise/卡片 3D */
 @keyframes enterZoom{ from{opacity:0; transform:translateY(10px) scale(.96)} to{opacity:1; transform:none} }
 @keyframes enterRise{ from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:none} }
 @keyframes cardIn{ from{opacity:0; transform:perspective(900px) translateY(16px) rotateX(6deg)} to{opacity:1; transform:perspective(900px) translateY(0) rotateX(0)} }
 
-/* 公告分页“翻页”动画（翻出再跳转） */
+/* 公告分页翻页动画 */
 .ann-grid.flip-out{
   transform: perspective(1200px) rotateX(8deg) translateY(30px);
   opacity:0; filter:blur(10px);
@@ -228,3 +234,24 @@ body.enter .grid .card{ animation: cardIn .62s var(--ease-bouncy) both; animatio
 
 /* 背景轻微视差（滚动） */
 .bg-sheen{ will-change: transform }
+
+/* ========= 模态框（加入我们二次确认） ========= */
+#modal-root{ position:fixed; inset:0; z-index:70; pointer-events:none }
+.modal-backdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.32);
+  -webkit-backdrop-filter: blur(12px) saturate(150%); backdrop-filter: blur(12px) saturate(150%);
+  opacity:0; transition:opacity .28s var(--ease-out);
+}
+.modal{
+  position:fixed; left:50%; top:50%; transform:translate(-50%,-50%) scale(.96);
+  background:var(--glass-strong); border:1px solid var(--stroke); border-radius:16px; box-shadow:var(--shadow);
+  padding:18px; width:min(420px, calc(100% - 32px));
+  opacity:0; transition: opacity .28s var(--ease-out), transform .28s var(--ease-out);
+}
+.modal h3{ margin:0 0 8px }
+.modal p{ margin:0; color:var(--muted) }
+.modal-actions{ display:flex; gap:10px; justify-content:flex-end; margin-top:14px }
+.modal .btn{ border-radius:10px }
+.modal .btn.primary{ background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#001018; border-color:transparent; font-weight:700 }
+.modal.in{ opacity:1; transform:translate(-50%,-50%) scale(1) }
+.modal-backdrop.in{ opacity:1 }
