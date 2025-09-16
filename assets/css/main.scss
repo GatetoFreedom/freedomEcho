@@ -10,9 +10,26 @@
   --ease-smooth: cubic-bezier(.22,1,.36,1);
   --ease-bouncy: cubic-bezier(.18,.9,.22,1.08);
   --t-quick: .18s; --t-base: .34s; --t-slow: .72s;
+
   /* 灵动岛专用曲线与时长（新增） */
   --ease-island: cubic-bezier(.22,.9,.2,1);
   --t-island: .46s;
+
+  /* 灵动岛专用底色（亮色更亮、深色更暗） */
+  --glass-island: rgba(255,255,255,.65);    /* light 默认值，下面的媒体查询会覆盖 */
+  --stroke-island: rgba(15,23,42,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --glass-island: rgba(10,14,25,.58);     /* dark：比页面其它信息&背景略暗 */
+    --stroke-island: rgba(255,255,255,.12);
+  }
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --glass-island: rgba(255,255,255,.72);  /* light：保持更亮以突出导航 */
+    --stroke-island: rgba(15,23,42,.10);
+  }
 }
 
 /* 主题（暗色优先） */
@@ -89,11 +106,15 @@ a{color:var(--brand); text-decoration:none}
   border:1px solid var(--stroke); border-radius:var(--radius); box-shadow:var(--shadow);
 }
 
-/* 灵动岛式导航（上品牌、下导航） */
-/* —— 使用 clip-path inset 实现“从四周向内吸收”的收缩/展开 —— */
+/* 灵动岛式导航：使用 clip-path inset 实现“从四周向内吸收”的收缩/展开 */
 .site-header.island{
   position:sticky; top:12px; z-index:20;
   margin:12px auto; width:min(100% - 24px, var(--maxw));
+
+  /* 专属底色：覆盖 .glass 的背景，使深色更暗、亮色更亮 */
+  background: var(--glass-island);
+  border-color: var(--stroke-island);
+
   /* 吸收式缩放：通过 inset + 圆角动态变化来“向内收缩” */
   --iInset: 0px;          /* 四周内收的量 */
   --iRadius: 18px;        /* 圆角半径 */
@@ -103,8 +124,33 @@ a{color:var(--brand); text-decoration:none}
     transform var(--t-island) var(--ease-island),
     padding var(--t-island) var(--ease-island),
     border-radius var(--t-island) var(--ease-island),
+    background .28s var(--ease-out),
     box-shadow .34s var(--ease-out);
 }
+/* 状态切换“流光提示” */
+.site-header.island::after{
+  content:""; position:absolute; inset:-2px; border-radius:inherit; pointer-events:none;
+  opacity:0; transform:translateX(-120%);
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.8) 50%, transparent 70%);
+  filter: blur(6px); mix-blend-mode: screen;
+}
+@media (prefers-color-scheme: dark){
+  .site-header.island::after{
+    /* 深色用偏蓝的流光，降低亮度以协调整体 */
+    background: linear-gradient(120deg, transparent 30%, color-mix(in oklab, #8bdcff, white 15%) 50%, transparent 70%);
+    opacity:.0;
+  }
+}
+.site-header.island.flash::after{
+  animation: islandFlash .9s var(--ease-island) both;
+}
+@keyframes islandFlash{
+  0%   {opacity:.00; transform:translateX(-120%)}
+  15%  {opacity:.85}
+  45%  {opacity:.45}
+  100% {opacity:0;   transform:translateX(120%)}
+}
+
 .island-inner{padding:12px 14px; display:grid; gap:8px}
 .island-brand{display:flex; align-items:center; justify-content:center; position:relative}
 .brand{font-weight:760; letter-spacing:.3px; font-size:17px}
@@ -112,14 +158,17 @@ a{color:var(--brand); text-decoration:none}
 /* 按钮：状态提示 + 旋转过渡（hint-up/ hint-down 由 JS 切换） */
 .island-toggle{
   position:absolute; right:6px; top:4px; width:28px; height:28px;
-  border-radius:999px; border:1px solid var(--stroke); background:var(--glass-strong); color:var(--text);
+  border-radius:999px; border:1px solid var(--stroke-island);
+  background:color-mix(in oklab, var(--glass-island), white 8%);
+  color:var(--text);
   display:flex; align-items:center; justify-content:center;
-  transition: transform .22s var(--ease-out), background .22s var(--ease-out), border-color .22s var(--ease-out);
+  transition: transform .22s var(--ease-out), background .22s var(--ease-out), border-color .22s var(--ease-out), opacity .22s var(--ease-out);
 }
 .island-toggle:hover{ transform: scale(1.06) }
 .island-toggle.hint-up{ transform: rotate(180deg) }  /* 收起态：箭头向上 */
 .island-toggle.hint-down{ transform: rotate(0deg) }   /* 展开态：箭头向下 */
 
+/* 导航显隐 */
 .island-nav{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; transition: opacity var(--t-base) var(--ease-out), max-height var(--t-base) var(--ease-out)}
 .nav-link{
   display:inline-block; padding:8px 12px; border-radius:999px;
@@ -164,6 +213,19 @@ a{color:var(--brand); text-decoration:none}
   animation: shimmer 3.6s linear infinite;
 }
 @keyframes shimmer{ 0%{background-position:-100% 0} 100%{background-position:200% 0} }
+
+/* 公告列表标题也加“流光”（低强度、持续） */
+.ann-grid .card h3 a{
+  position:relative; display:inline-block;
+  background:linear-gradient(95deg, var(--brand), var(--brand-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.ann-grid .card h3 a::after{
+  content:""; position:absolute; inset:-4px -8px; pointer-events:none;
+  background:linear-gradient(120deg, transparent 35%, rgba(255,255,255,.55) 50%, transparent 65%);
+  background-size:200% 100%; filter:blur(4px); opacity:.35; mix-blend-mode:overlay;
+  animation: shimmer 4.6s linear infinite;
+}
 
 .hero{display:grid; gap:14px; padding:18px 0 8px}
 .hero .subtitle{color:var(--muted); margin:0}
