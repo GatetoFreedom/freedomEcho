@@ -135,7 +135,8 @@ function setupPageTransitions() {
     const href = a.getAttribute('href') || '';
     if (href.startsWith('#')) return false;
     const url = new URL(href, window.location.href);
-    if (a.classList.contains('join-confirm')) return false; // “加入我们”由二次确认处理
+    // 仅站内链接做转场；旧的 .join-confirm 属于外链，避免拦截
+    if (a.classList.contains('join-confirm')) return false;
     return url.origin === origin;
   });
 
@@ -259,7 +260,7 @@ if (sheen){
   }, { passive: true });
 }
 
-/* ========= “加入我们”二次确认 ========= */
+/* ========= 外部跳转二次确认（/join 页面：Telegram / Signal） ========= */
 function createModal(html){
   const root = document.getElementById('modal-root');
   const wrap = document.createElement('div');
@@ -277,13 +278,13 @@ function closeModal(node){
   node.querySelector('.modal-backdrop')?.classList.remove('in');
   setTimeout(()=> node.remove(), 220);
 }
-function openJoinConfirm(url){
+function openJoinConfirm(appName, url){
   const tpl = `
   <div class="modal-shell" style="pointer-events:auto">
     <div class="modal-backdrop"></div>
     <div class="modal glass" role="dialog" aria-modal="true" aria-label="外部跳转确认">
       <h3>即将离开本站</h3>
-      <p>你将打开 Telegram 链接：<br><code>${url}</code></p>
+      <p>你将打开 <b>${appName}</b> 链接：<br><code>${url}</code></p>
       <div class="modal-actions">
         <button class="btn" data-role="cancel">取消</button>
         <button class="btn primary" data-role="go">继续前往</button>
@@ -298,14 +299,27 @@ function openJoinConfirm(url){
     window.open(url, '_blank', 'noopener');
   });
 }
-function setupJoinConfirm(){
+function setupJoinExternal(){
+  // 新：用于 /join 页的两个按钮（data-app + data-href）
+  document.querySelectorAll('.join-external').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const url = a.dataset.href || a.href;
+      const app = a.dataset.app || '外部';
+      openJoinConfirm(app, url);
+    });
+  });
+}
+function setupJoinConfirmLegacy(){
+  // 兼容：旧的 .join-confirm（仅 Telegram）
   document.querySelectorAll('a.join-confirm').forEach(a=>{
     a.addEventListener('click', (e)=>{
       e.preventDefault();
       e.stopImmediatePropagation();
       const url = a.dataset.href || a.href;
-      openJoinConfirm(url);
+      openJoinConfirm('Telegram', url);
     });
   });
 }
-document.addEventListener('DOMContentLoaded', setupJoinConfirm);
+document.addEventListener('DOMContentLoaded', setupJoinExternal);
+document.addEventListener('DOMContentLoaded', setupJoinConfirmLegacy);
