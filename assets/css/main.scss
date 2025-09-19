@@ -348,3 +348,12 @@ body.enter .grid .card{ animation: cardIn .62s var(--ease-bouncy) both; animatio
 .modal .btn.primary{ background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#001018; border-color:transparent; font-weight:700 }
 .modal.in{ opacity:1; transform:translate(-50%,-50%) scale(1) }
 .modal-backdrop.in{ opacity:1 }
+/* Join 页面：应用图标与标题对齐的小样式 */
+.app-card .app-head{ display:flex; align-items:center; gap:10px; margin-bottom:8px }
+.app-card .app-icon{
+  width:36px; height:36px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  background: var(--glass-strong); border:1px solid var(--stroke);
+}
+.app-card .app-icon.tg{ background:linear-gradient(135deg,#17A9FD,#1D9BF0); color:white; border-color: transparent }
+.app-card .app-icon.sig{ background:linear-gradient(135deg,#3A76F0,#0BA3FF); color:white; border-color: transparent }
