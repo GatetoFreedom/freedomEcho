@@ -1,3 +1,27 @@
+Charts
+
+
+Chart-01
+Chart-Change-in-US-Suicide-Death-Rates-in-the-Past-Decade.png
+The New York Times
+Change in U.S. Suicide Death Rates in the Past Decade
+While those ages 45 to 54 had the highest suicide rate in 2019, the greatest percentage increase in the decade leading up to 2019 was among those ages 15 to 24.
+Source: Centers for Disease Control and Prevention. Note: The chart shows the percentage change in suicide deaths per 100,000 people in the United States for each age group. Each line is based on a three-year rolling average. Data for those ages 14 and younger are not included because their suicide rate is very low.
+
+Chart-02
+Chart-Suicide-Deaths-in-the-United-States.png
+The New York Times
+Suicide Deaths in the United States
+Source: Centers for Disease Control and Prevention. Note: Chart shows the age-adjusted three-year rolling average.
+
+Chart-03
+100-“Most-Viewed”-Posts-on-the-Suicide-Forum.png
+The New York Times
+Note: Posts represented are the 100 with the largest numbers of pageviews, as of Oct. 3, in the “Suicide Discussion” section of the website. This section contains about 75 percent of the website’s posts, while the “Recovery” section contains about 5 percent and the “Offtopic” section about 20 percent.
+
+
+
+Photos
 1.jpg & 13.jpg
 Family photos of Daniel Dal Canto end at age 16.
 Ashley Gilbertson for The New York Times
