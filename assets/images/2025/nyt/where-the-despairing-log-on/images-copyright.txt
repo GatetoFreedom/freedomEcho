@@ -1,6 +1,9 @@
+Emoji
+Emoji-Heart.png, Emoji-Hug.png, Emoji-Thumb.png, & Emoji-Tear.png
+❤️🤗👍😢
+Apple Inc.
+
 Charts
-
-
 Chart-01
 Chart-Change-in-US-Suicide-Death-Rates-in-the-Past-Decade.png
 The New York Times
@@ -18,7 +21,6 @@ Chart-03
 100-“Most-Viewed”-Posts-on-the-Suicide-Forum.png
 The New York Times
 Note: Posts represented are the 100 with the largest numbers of pageviews, as of Oct. 3, in the “Suicide Discussion” section of the website. This section contains about 75 percent of the website’s posts, while the “Recovery” section contains about 5 percent and the “Offtopic” section about 20 percent.
-
 
 
 Photos
