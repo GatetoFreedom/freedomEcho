@@ -4,14 +4,14 @@ Apple Inc.
 
 Charts
 Chart-01
-Chart-Change-in-US-Suicide-Death-Rates-in-the-Past-Decade.png
+Chart-Change-in-US-Suicide-Death-Rates-in-the-Past-Decade.png & Chart-Change-in-US-Suicide-Death-Rates-in-the-Past-Decade-Original.PNG
 The New York Times
 Change in U.S. Suicide Death Rates in the Past Decade
 While those ages 45 to 54 had the highest suicide rate in 2019, the greatest percentage increase in the decade leading up to 2019 was among those ages 15 to 24.
 Source: Centers for Disease Control and Prevention. Note: The chart shows the percentage change in suicide deaths per 100,000 people in the United States for each age group. Each line is based on a three-year rolling average. Data for those ages 14 and younger are not included because their suicide rate is very low.
 
 Chart-02
-Chart-Suicide-Deaths-in-the-United-States.png
+Chart-Suicide-Deaths-in-the-United-States.png & Chart-Suicide-Deaths-in-the-United-States-Original.PNG
 The New York Times
 Suicide Deaths in the United States
 Source: Centers for Disease Control and Prevention. Note: Chart shows the age-adjusted three-year rolling average.
