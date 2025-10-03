@@ -1,5 +1,7 @@
 
 ---
+本篇撤回。
+目前版本由AI生成，文章的翻译和原文没有对应上，翻译还不全，择期将人工校对。
 layout: post
 title: "Where the Despairing Log On, and Learn Ways to Die"
 description: "English original (and bilingual version) of a NYT report presented with inline images and documented sources."
