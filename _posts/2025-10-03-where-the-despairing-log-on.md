@@ -5,7 +5,6 @@ categories: [announcements]
 tags: [NYT,News]
 ---
 
-
 > **Editors’ note:** This article focuses on suicide and contains details about those who have taken their own lives. If you are having thoughts of suicide, or are concerned that someone you know may be, resources are available here.
 <!--more-->
 
@@ -54,8 +53,9 @@ tags: [NYT,News]
   }
 </style>
 
-<p>**Where the Despairing Log On, and Learn Ways to Die**</p>
-<p>**By [[Megan Twohey]{.underline}](https://www.nytimes.com/by/megan-twohey) and [[Gabriel J.X. Dance]{.underline}](https://www.nytimes.com/by/gabriel-dance)Dec. 9, 2021**</p>
+**Where the Despairing Log On, and Learn Ways to Die**
+**By [[Megan Twohey]{.underline}](https://www.nytimes.com/by/megan-twohey) and [[Gabriel J.X. Dance]{.underline}](https://www.nytimes.com/by/gabriel-dance)Dec. 9, 2021**
+
 <p>It has the trappings of popular social media, a young audience and explicit content on suicide that other sites don't allow. It is linked to a long line of lives cut short.</p>
 <p>As Matthew van Antwerpen, a 17-year-old in suburban Dallas, struggled with remote schooling during the pandemic last year, he grew increasingly despondent. Searching online, he found a website about suicide.</p>
 <p>"Any enjoyment or progress I make in my life simply comes across as forced," he wrote on the site after signing up. "I know it is all just a distraction to blow time until the end."</p>
