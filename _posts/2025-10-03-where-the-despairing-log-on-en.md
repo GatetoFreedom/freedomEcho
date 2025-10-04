@@ -26,7 +26,7 @@ rights_policy:
 > **Editors’ note:** This article addresses suicide and contains detailed descriptions of self-harm and loss. Reader discretion is advised.
 <!--more-->
 
-> **Original**: *{{ page.original_title }}* — {{ page.original_source }} ({{ page.original_publication_date }})  
+> **Original**: *{{original_title }}* — {{ page.original_source }} ({{ page.original_publication_date }})  
 > Link: <{{ page.original_url }}>
 
 <style>
