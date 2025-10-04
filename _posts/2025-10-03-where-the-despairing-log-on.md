@@ -1,21 +1,10 @@
+---
+title: Where the Despairing Log On, and Learn Ways to Die - The New York Times
+description: This article focuses on suicide and contains details about those who have taken their own lives.
+categories: [announcements]
+tags: [NYT,News]
+---
 
----
-title: "Where the Despairing Log On, and Learn Ways to Die"
-description: "English original (and bilingual version) of a NYT report presented with inline images and documented sources."
-categories: [translation, report]
-tags: [New York Times, suicide, investigation]
-lang: en
-date: 2025-10-03 09:00:00 +0800
----
-# Source metadata for transparency
-original_title: "Where the Despairing Log On, and Learn Ways to Die"
-original_source: "The New York Times"
-rights_policy:
-  contact: "contact@gate2freedom.com"
-  jurisdiction: "US"
-  fair_use_basis: ["news reporting", "commentary/analysis"]
-  limitations: ["low-res/necessary excerpts", "non-commercial", "with source & captions"]
----
 
 > **Editors’ note:** This article focuses on suicide and contains details about those who have taken their own lives. If you are having thoughts of suicide, or are concerned that someone you know may be, resources are available here.
 <!--more-->
