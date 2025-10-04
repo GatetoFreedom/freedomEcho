@@ -57,7 +57,11 @@ tags: [NYT,News]
 </style>
 
 **Where the Despairing Log On, and Learn Ways to Die**
-**By [[Megan Twohey]{.underline}](https://www.nytimes.com/by/megan-twohey) and [[Gabriel J.X. Dance]{.underline}](https://www.nytimes.com/by/gabriel-dance)Dec. 9, 2021**
+<br>
+**By [[Megan Twohey]](https://www.nytimes.com/by/megan-twohey) and [[Gabriel J.X. Dance]](https://www.nytimes.com/by/gabriel-dance)**
+<br>
+**Dec. 9, 2021**
+<br>
 
 <p>It has the trappings of popular social media, a young audience and explicit content on suicide that other sites don't allow. It is linked to a long line of lives cut short.</p>
 <p>As Matthew van Antwerpen, a 17-year-old in suburban Dallas, struggled with remote schooling during the pandemic last year, he grew increasingly despondent. Searching online, he found a website about suicide.</p>
