@@ -9,6 +9,19 @@ tags: [NYT,News]
 > **Editors’ note:** This article focuses on suicide and contains details about those who have taken their own lives. If you are having thoughts of suicide, or are concerned that someone you know may be, resources are available here.
 <!--more-->
 
+<style>
+  .figure-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 1.5rem; }
+  .figure-grid figure, .figure-single { margin: 0; }
+  figure img { width: 100%; height: auto; }
+  figcaption { margin-top: .5rem; font-size: .9rem; opacity: .85; border-left: 3px solid #e5e7eb; padding-left: .6rem; }
+  .emoji-reactions { display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; margin: .75rem 0 1.25rem; }
+  .emoji-reactions .emoji img { width: 1.25rem; height: 1.25rem; vertical-align: text-bottom; margin-right: .35rem; }
+  .post-content p {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+</style>
+
 <p>**Where the Despairing Log On, and Learn Ways to Die**</p>
 <p>**By [[Megan Twohey]{.underline}](https://www.nytimes.com/by/megan-twohey) and [[Gabriel J.X. Dance]{.underline}](https://www.nytimes.com/by/gabriel-dance)Dec. 9, 2021**</p>
 <p>It has the trappings of popular social media, a young audience and explicit content on suicide that other sites don't allow. It is linked to a long line of lives cut short.</p>
