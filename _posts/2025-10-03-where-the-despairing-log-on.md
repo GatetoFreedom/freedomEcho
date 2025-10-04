@@ -19,7 +19,17 @@ tags: [NYT,News]
   .post-content p {
   word-break: break-word;
   overflow-wrap: anywhere;
+    /*parent container*/
+.post-content, .bilingual-section {
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
+/* emoji container*/
+.emoji-reactions {
+  flex-wrap: wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}}
 </style>
 
 <p>**Where the Despairing Log On, and Learn Ways to Die**</p>
