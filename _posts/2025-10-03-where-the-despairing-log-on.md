@@ -51,6 +51,9 @@ tags: [NYT,News]
     word-break: break-word;
     overflow-wrap: anywhere;
   }
+  body {
+  overflow-x: hidden;
+  }
 </style>
 
 **Where the Despairing Log On, and Learn Ways to Die**
