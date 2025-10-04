@@ -74,7 +74,9 @@ tags: [NYT,News]
 <p>While 10 of the identified suicides have been previously reported, the Times investigation reveals the broader scope of the deaths, the growing use of the poison and the influence of the site. Reporters analyzed more than 1.2 million messages from the site, examined members' online histories, reviewed hundreds of pages of police and coroner records, and interviewed dozens of families left behind.</p>
 <p>The site now draws six million page views a month, on average --- quadruple that of the National Suicide Prevention Lifeline, according to data from Similarweb, a web analytics company.</p>
 <p>Most members reported that they had experienced mental illness and were 30 or younger, according to a survey last year by the site. That age group roughly aligns with the demographic in the United States --- 15 to 24 --- that had the sharpest rise in suicide rate from 2009 to 2019, the most recent data available.</p>
-<p>**Change in U.S. Suicide Death Rates in the Past Decade**</p>
+
+**Change in U.S. Suicide Death Rates in the Past Decade**
+
 <p>While those ages 45 to 54 had the highest suicide rate in 2019, the greatest percentage increase in the decade leading up to 2019 was among those ages 15 to 24.</p>
 <figure class="chart">
   <img src="/assets/images/2025/nyt/where-the-despairing-log-on/Chart-Change-in-US-Suicide-Death-Rates-in-the-Past-Decade.png" alt="See caption">
@@ -101,7 +103,9 @@ tags: [NYT,News]
 <p>His other plans took shape quickly and secretly. In only 29 days, Matthew joined the site, learned of the lethal preservative and ended his life, listening to a playlist that he'd said made him nostalgic for his childhood.</p>
 <p>"My son committed suicide at 17 two weeks ago," Ms. Luft tweeted in January, calling out the site. "They told him how to, encouraged him after he took the mix."</p>
 <p>"Please help me," she wrote, joining the calls of other parents for Marquis and Serge to be held accountable and for the banning of the site, called Sanctioned Suicide.</p>
-<p>**In considering how much detail to provide**</p>
+
+**In considering how much detail to provide**
+
 <p>about the website and its content, Times journalists interviewed mental health officials and suicide researchers, as well as parents and former members of the forum. Editors decided to identify the site and the preservative used in many of the suicides --- as some other news outlets have done --- in order to fully inform readers about the dangers they pose, particularly to the young and vulnerable.</p>
 <p>Australia, Germany and Italy succeeded in restricting access to the site within their borders, but American law enforcement officials, lawmakers and technology companies have been reluctant to act.</p>
 <p>While most states have laws against assisting suicide, they are inconsistent, rarely enforced and don't explicitly address online activity. Federal law shields website operators from liability for most harmful content posted by users. Court decisions have left unsettled questions about protected speech.</p>
@@ -121,7 +125,9 @@ tags: [NYT,News]
   </figure>
 </div>
 <p>Family photos of Daniel Dal Canto end at age 16.Ashley Gilbertson for The New York Times</p>
-<p>**'You Sort of Felt Safe, but You Weren't Safe'**</p>
+
+**'You Sort of Felt Safe, but You Weren't Safe'**
+
 <p>Daniel Dal Canto, a high school junior, arrived on the suicide site with little idea of how to end his life.</p>
 <p>Three years earlier, he had been depressed, prompting his parents to steer him into months of therapy and medication. Now he was drumming in a jazz band, playing video games with friends and getting straight A's. To those around him, including his father, a physician, the 16-year-old seemed to be doing well.</p>
 <p>"It almost created a false sense of security for me because I thought I knew what a depressed Daniel looked like," his mother, Pam Dal Canto, said in an interview.</p>
@@ -146,7 +152,9 @@ tags: [NYT,News]
 <p>While some of those drawn to the website described suffering from physical pain, most mentioned depression, bipolar disorder or other mental illnesses.</p>
 <p>About half were 25 or younger, the survey showed; like Daniel, some were minors. One shared, "I'm 13, I ran away from home 1 month ago." Another, who claimed to be 14, wrote in a post about contemplating suicide, "My dad would probably be really angry."</p>
 <p>The suicide rate has risen over the past 20 years in the United States. About 45,000 people take their own lives each year --- more than die from traffic accidents. (That figure does not count the hundreds of physician-assisted deaths in the nine states where they are legal and restricted to the terminally ill.)</p>
-<p>**Suicide Deaths in the United States**</p>
+
+**Suicide Deaths in the United States**
+
 <figure class="chart">
   <img src="/assets/images/2025/nyt/where-the-despairing-log-on/Chart-Suicide-Deaths-in-the-United-States.png" alt="See caption">
   <figcaption>The New York Times Suicide Deaths in the United States Source: Centers for Disease Control and Prevention. Note: Chart shows the age-adjusted three-year rolling average. (Processed visualization)</figcaption>
@@ -200,7 +208,9 @@ tags: [NYT,News]
 <p>What was the taste like?</p>
 <p>All the best. Wish it was me</p>
 <p>Good luck, I wish you peace. Youare so brave.</p>
-<p>**'They'll Never Prevail With Censorship'**</p>
+
+**'They'll Never Prevail With Censorship'**
+
 <p>In December 2019, two months after Daniel's death, a coroner in England called for a government inquiry after discovering that members of the site had advised a troubled young woman on ending her life. German officials had already begun an investigation, worried about potential harm to children.</p>
 <p>And Australia's eSafety Commission, the nation's regulator for online safety, had been looking into the site for months, after a father reported that his 22-year-old son had poisoned himself with the preservative.</p>
 <p>"We were very concerned about having it out there in the open, what that would mean to potentially thousands of other families who had a vulnerable child or a vulnerable person," Julie Inman Grant, the eSafety commissioner, said in an interview.</p>
@@ -228,54 +238,58 @@ tags: [NYT,News]
 <p>"We have been planning for the worst for years," Marquis wrote in November 2020, citing daily server backups and the purchase of alternative domains, "and we are confident even if they coordinated all those takedowns at the same time (which is very unlikely), we could be back online within 24 hours."</p>
 <p>The two took other precautions. Serge warned members they would crack down on anyone publicly sharing personal contact information. He also said they would begin closing the accounts of those who had posted goodbye threads, a step that kept loved ones and law enforcement from gaining access to them later.</p>
 <p>"If you're preparing your departure, please contact a mod so we can help with preparations," Serge wrote, directing members to moderators.</p>
-<p>**The Times identified 45 people who died by suicide after spending time on the website.**</p>
+
+**The Times identified 45 people who died by suicide after spending time on the website.**
 <p>(Their names, and in some cases their cities, have been withheld here.)</p>
-<p>**16-year-old female**, Illinois</p>
-<p>**16-year-old male**, Salt Lake City</p>
-<p>**17-year-old male**, Frisco, Texas</p>
-<p>**18-year-old male**, Houston</p>
-<p>**18-year-old male**, Bassano del Grappa, Italy</p>
-<p>**19-year-old female**, Richmond, Va.</p>
-<p>**19-year-old male**, Rome</p>
-<p>**19-year-old male**, Rome</p>
-<p>**20-year-old male**, Texas</p>
-<p>**20-year-old female**, Costa Mesa, Calif.</p>
-<p>**20-year-old female**, Radcliffe, England</p>
-<p>**20-year-old female**, Palermo, Italy</p>
-<p>**21-year-old male**, Langley, British Columbia</p>
-<p>**21-year-old male**, Sunderland, England</p>
-<p>**22-year-old male**, Australia</p>
-<p>**22-year-old male**, Perth, Australia</p>
-<p>**23-year-old male**, Leeds, England</p>
-<p>**23-year-old female**, Glasgow</p>
-<p>**24-year-old female**, Cumbria, England</p>
-<p>**24-year-old female**, Scotland</p>
-<p>**25-year-old female**, York Haven, Pa.</p>
-<p>**25-year-old male**, Connecticut</p>
-<p>**25-year-old male**, Portadown, Northern Ireland</p>
-<p>**25-year-old female**, Wisconsin</p>
-<p>**26-year-old male**, North Carolina</p>
-<p>**27-year-old male**, Schertz, Texas</p>
-<p>**28-year-old female**, New Jersey</p>
-<p>**28-year-old female**, North Haven, Conn.</p>
-<p>**28-year-old male**, Scotland</p>
-<p>**29-year-old male**, Widnes, England</p>
-<p>**30-year-old male**, Canada</p>
-<p>**30-year-old male**, Italy</p>
-<p>**30-year-old male**, Grapevine, Texas</p>
-<p>**31-year-old female**, Amherst, Ohio</p>
-<p>**31-year-old male**, Leiston, England</p>
-<p>**31-year-old male**, Kansas City, Mo.</p>
-<p>**31-year-old female**, England</p>
-<p>**32-year-old female**, Missouri</p>
-<p>**32-year-old male**, Leicestershire, England</p>
-<p>**35-year-old male**, Mississippi</p>
-<p>**35-year-old female**, Kirkhill, Inverness, Scotland</p>
-<p>**42-year-old male**, Hilliard, Ohio</p>
-<p>**49-year-old male**, Darlington, England</p>
-<p>**56-year-old male**, California</p>
-<p>**58-year-old male**, Texas</p>
-<p>Concerned about legal liability, Marquis explained, the men were requiring prospective members to tick a box affirming they were 18 or older, though he made clear in a post that the site would not ask for proof.</p>
+
+**16-year-old female**, Illinois
+**16-year-old male**, Salt Lake City
+**17-year-old male**, Frisco, Texas
+**18-year-old male**, Houston
+**18-year-old male**, Bassano del Grappa, Italy
+**19-year-old female**, Richmond, Va.
+**19-year-old male**, Rome
+**19-year-old male**, Rome
+**20-year-old male**, Texas
+**20-year-old female**, Costa Mesa, Calif.
+**20-year-old female**, Radcliffe, England
+**20-year-old female**, Palermo, Italy
+**21-year-old male**, Langley, British Columbia
+**21-year-old male**, Sunderland, England
+**22-year-old male**, Australia</p>
+**22-year-old male**, Perth, Australia
+**23-year-old male**, Leeds, England
+**23-year-old female**, Glasgow
+**24-year-old female**, Cumbria, England
+**24-year-old female**, Scotland
+**25-year-old female**, York Haven, Pa.
+**25-year-old male**, Connecticut
+**25-year-old male**, Portadown, Northern Ireland
+**25-year-old female**, Wisconsin
+**26-year-old male**, North Carolina
+**27-year-old male**, Schertz, Texas
+**28-year-old female**, New Jersey
+**28-year-old female**, North Haven, Conn.
+**28-year-old male**, Scotland
+**29-year-old male**, Widnes, England
+**30-year-old male**, Canada
+**30-year-old male**, Italy
+**30-year-old male**, Grapevine, Texas
+**31-year-old female**, Amherst, Ohio
+**31-year-old male**, Leiston, England
+**31-year-old male**, Kansas City, Mo.
+**31-year-old female**, England
+**32-year-old female**, Missouri
+**32-year-old male**, Leicestershire, England
+**35-year-old male**, Mississippi
+**35-year-old female**, Kirkhill, Inverness, Scotland
+**42-year-old male**, Hilliard, Ohio
+**49-year-old male**, Darlington, England
+**56-year-old male**, California
+**58-year-old male**, Texa
+
+Concerned about legal liability, Marquis explained, the men were requiring prospective members to tick a box affirming they were 18 or older, though he made clear in a post that the site would not ask for proof.
+
 <p>Links to a suicide hotline and other mental health resources appeared on the site, as did a new public forum focusing on recovery from suicidal thoughts. But Marquis also noted that people who registered only to use the recovery forum "will be denied most likely."</p>
 <p>As several deaths drew scrutiny from news organizations, he claimed that critics wanted "total annihilation of this website," dismissed coverage as "the usual pro-life BS" and vowed to take "drastic measures" --- going to court --- to stop efforts to take it down.</p>
 <p>"They'll never prevail with censorship and we will fight every one of their attempts to do so," Marquis wrote.</p>
@@ -285,12 +299,14 @@ tags: [NYT,News]
 <p>Marquis dropped some hints in his posts. His father had been in the military. He was "about 7-8 years old" on Sept. 11. And he acknowledged his struggles with suicidal thoughts and wrote that he was among those who had been "immensely helped by talking to people on the forum."</p>
 <p>Serge was more private. He didn't appear to share biographical information and would later remove his posts from the site, essentially erasing his visible connection to it. (The Times viewed screenshots and archived web pages that had captured messages posted by Serge before he deleted them.)</p>
 <p>On video chats and other virtual events, neither man showed his face.</p>
-<p>But in June 2019, [BuzzFeed News reported](https://www.buzzfeednews.com/article/tasneemnashrulla/incels-suicide-forum-woman-killed-herself) that in addition to the suicide site, the two men were running the incel websites.</p>
+But in June 2019, [BuzzFeed News reported](https://www.buzzfeednews.com/article/tasneemnashrulla/incels-suicide-forum-woman-killed-herself) that in addition to the suicide site, the two men were running the incel websites.
 <p>Money didn't appear to be the motivation. Both men seemed to have found their identity and sense of purpose in the online world of incels, many of whom share a dark outlook known as "black pill." In 2017, when Reddit had banned an online group of incels for encouraging violence, Serge started an independent site for them, soon joined by Marquis, who had written to him about his interest and skills as a system administrator.</p>
 <p>By then, several deadly attacks had been carried out by men expressing grievances common among incels. American authorities would later flag incels as an emerging extremist threat. Radicalization experts warned that some were prone to misogyny, suicide and violence.</p>
 <p>On the incel sites that Serge and Marquis run, many members have expressed anger at society; some commend those who commit violence, and fantasize about doing the same. An Ohio man who was a frequent poster on one site was indicted this past July for allegedly plotting to slaughter women. In a podcast interview about incels, Serge said that much of the discussion was "suicide fuel."</p>
 <p>But he and Marquis claimed they were helping those on the sites by allowing them to freely express themselves and face hard truths, a rationale similar to one they have offered about their suicide site.</p>
-<p>**100 Most-Viewed Posts on the Suicide Forum**</p>
+
+**100 Most-Viewed Posts on the Suicide Forum**
+
 <figure class="figure-single">
   <img src="/assets/images/2025/nyt/where-the-despairing-log-on/100-MostViewed-Posts-on-the-Suicide-Forum.png" alt="See caption">
   <figcaption>The New York Times Note: Posts represented are the 100 with the largest numbers of pageviews, as of Oct. 3, in the "Suicide Discussion" section of the website. This section contains about 75 percent of the website's posts, while the "Recovery" section contains about 5 percent and the "Offtopic" section about 20 percent.</figcaption>
@@ -317,7 +333,9 @@ tags: [NYT,News]
   </figure>
 </div>
 <p>Shawn Shatto's bedroom. She was 25.Ashley Gilbertson for The New York Times</p>
-<p>**'Look, Here's the Crimes Code'**</p>
+
+**'Look, Here's the Crimes Code'**
+
 <p>Jackie Bieber went to the district attorney's office in York County, Pa., in July 2019, pleading with officials to investigate the death of her daughter, Shawn Shatto, two months earlier.</p>
 <p>In most states, including Pennsylvania, assisting suicide is a crime. Ms. Bieber shared with prosecutors some exchanges on the suicide site that she thought showed just that activity.</p>
 <p>When Ms. Shatto, who suffered from severe social anxiety, depression and other mental health conditions, posted that she wanted to die because she hated her Amazon warehouse job, members offered affirmation.</p>
@@ -349,7 +367,9 @@ tags: [NYT,News]
 <p>Ms. Barbos got pulled deeper into the suicide forum. She was learning more and more about poisoning. And she was getting swept up in private messaging with a member in Bulgaria, who had offered support. "I wish I could've felt real affection before doing this," she told him.</p>
 <p>She managed to escape a predator. But she didn't escape suicide. In February 2020, Ms. Barbos ended her life while messaging with that member on the site.</p>
 <p>"It swallowed her," said her mother, Maria.</p>
-<p>**'How Is This Site Still Allowed?'**</p>
+
+**'How Is This Site Still Allowed?'**
+
 <p>The Times investigation led to an elegant three-story apartment building in Montevideo, Uruguay, and a modest two-bedroom townhouse in Huntsville, Ala.</p>
 <p>The man calling himself Serge is Diego Joaquín Galante; Marquis is Lamarcus Small.</p>
 <p>Reporters pieced together their identities and roles with the site from domain registration and financial documents, their online activity, public documents including court records, and interviews with seven people who had interacted with either of them.</p>
@@ -378,14 +398,15 @@ tags: [NYT,News]
 <p>As the months went by, more members of the suicide site died. A 21-year-old lifeguard outside Vancouver. A 25-year-old online gamer in Portadown, Northern Ireland. A 31-year-old musician in Kansas City, Mo. An 18-year-old high school student in Italy.</p>
 <p>And just this fall, a 30-year-old man in Grapevine, Texas. Newly unemployed, going through a breakup and deeply in debt, he found his way to the site, making his first post in late September. Three days later, he was gone.</p>
 <p>If you are having thoughts of suicide, in the United States call the National Suicide Prevention Lifeline at [800-273-8255](tel:800-273-8255) (TALK) or go to [SpeakingOfSuicide.com/resources](https://www.speakingofsuicide.com/resources/)for a list of additional resources. Go [here](https://www.nytimes.com/article/suicide-prevention-helplines.html) for resources outside the United States.</p>
-<p>**Additional reporting**</p>
-<p>**Emma Bubola, Aditya Jaishankar, Aaron Krolik, Gerardo Lissardy, Aimee Ortiz and Morven Quin.**</p>
-<p>**Research**</p>
-<p>**Susan C. Beachy, Kitty Bennet, Michael LaForgia, Sheelagh McNeill and Julie Tate.**</p>
-<p>**Graphics**</p>
-<p>**Eleanor Lutz and Duy Nguyen.**</p>
-<p>**Production**</p>
-<p>**Aliza Aufrichtig and Rumsey Taylor. Additional production by Gabriel Gianordoli.**</p>
+
+**Additional reporting**
+**Emma Bubola, Aditya Jaishankar, Aaron Krolik, Gerardo Lissardy, Aimee Ortiz and Morven Quin.**
+**Research**
+**Susan C. Beachy, Kitty Bennet, Michael LaForgia, Sheelagh McNeill and Julie Tate.**
+**Graphics**
+**Eleanor Lutz and Duy Nguyen.**
+**Production**
+**Aliza Aufrichtig and Rumsey Taylor. Additional production by Gabriel Gianordoli.**
 
 ## Image Sources & Credits
 Image Sources and Credits
