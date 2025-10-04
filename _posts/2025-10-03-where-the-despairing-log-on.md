@@ -10,26 +10,48 @@ tags: [NYT,News]
 <!--more-->
 
 <style>
-  .figure-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 1.5rem; }
-  .figure-grid figure, .figure-single { margin: 0; }
-  figure img { width: 100%; height: auto; }
-  figcaption { margin-top: .5rem; font-size: .9rem; opacity: .85; border-left: 3px solid #e5e7eb; padding-left: .6rem; }
-  .emoji-reactions { display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; margin: .75rem 0 1.25rem; }
-  .emoji-reactions .emoji img { width: 1.25rem; height: 1.25rem; vertical-align: text-bottom; margin-right: .35rem; }
-  .post-content p {
-  word-break: break-word;
-  overflow-wrap: anywhere;
-    /*parent container*/
-.post-content, .bilingual-section {
-  word-break: break-word;
-  overflow-wrap: anywhere;
-}
-/* emoji container*/
-.emoji-reactions {
-  flex-wrap: wrap;
-  word-break: break-word;
-  overflow-wrap: anywhere;
-}}
+  .figure-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .figure-grid figure,
+  .figure-single {
+    margin: 0;
+  }
+  figure img {
+    width: 100%;
+    height: auto;
+  }
+  figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    border-left: 3px solid #e5e7eb;
+    padding-left: 0.6rem;
+  }
+  .emoji-reactions {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0.75rem 0 1.25rem;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  .emoji-reactions .emoji img {
+    width: 1.25rem;
+    height: 1.25rem;
+    vertical-align: text-bottom;
+    margin-right: 0.35rem;
+  }
+  .post-body,
+  .post-body p,
+  .post-body a {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
 </style>
 
 <p>**Where the Despairing Log On, and Learn Ways to Die**</p>
