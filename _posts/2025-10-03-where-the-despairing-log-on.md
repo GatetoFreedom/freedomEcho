@@ -1,14 +1,12 @@
 
 ---
-layout: post
 title: "Where the Despairing Log On, and Learn Ways to Die"
 description: "English original (and bilingual version) of a NYT report presented with inline images and documented sources."
 categories: [translation, report]
 tags: [New York Times, suicide, investigation]
 lang: en
 date: 2025-10-03 09:00:00 +0800
-image: /assets/images/2025/nyt/where-the-despairing-log-on/cover.jpg
-
+---
 # Source metadata for transparency
 original_title: "Where the Despairing Log On, and Learn Ways to Die"
 original_source: "The New York Times"
