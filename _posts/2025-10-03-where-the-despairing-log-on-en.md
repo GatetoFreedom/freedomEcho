@@ -89,12 +89,12 @@ figcaption { margin-top: .5rem; font-size: .9rem; opacity: .85; border-left: 3px
 <p>"'I want to help people,'" his mother, Sharon Luft, recalled him telling her. "He was just a sweet kid."</p>
 <div class="figure-grid">
   <figure>
-    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/3.png" alt="See caption">
-    <figcaption>Filename: 3.png. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
+    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/3.jpg" alt="See caption">
+    <figcaption>Filename: 3.jpg. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
   </figure>
   <figure>
-    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/6.png" alt="See caption">
-    <figcaption>Filename: 6.png. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
+    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/6.jpg" alt="See caption">
+    <figcaption>Filename: 6.jpg. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
   </figure>
 </div>
 <p>Matthew van Antwerpen's bedroom. He was 17.Ashley Gilbertson for The New York Times</p>
@@ -112,12 +112,12 @@ figcaption { margin-top: .5rem; font-size: .9rem; opacity: .85; border-left: 3px
 <p>He has several times referred to the site as a "pro-choice" forum that supports members' decisions to live or to die. "People are responsible for their own actions at the end of the day," Marquis wrote last year, "and there's not much we can do about that."</p>
 <div class="figure-grid">
   <figure>
-    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/1.png" alt="See caption">
-    <figcaption>Filename: 1.png. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
+    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/1.jpg" alt="See caption">
+    <figcaption>Filename: 1.jpg. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
   </figure>
   <figure>
-    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/13.png" alt="See caption">
-    <figcaption>Filename: 13.png. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
+    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/13.jpg" alt="See caption">
+    <figcaption>Filename: 13.jpg. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
   </figure>
 </div>
 <p>Family photos of Daniel Dal Canto end at age 16.Ashley Gilbertson for The New York Times</p>
@@ -127,12 +127,12 @@ figcaption { margin-top: .5rem; font-size: .9rem; opacity: .85; border-left: 3px
 <p>"It almost created a false sense of security for me because I thought I knew what a depressed Daniel looked like," his mother, Pam Dal Canto, said in an interview.</p>
 <div class="figure-grid">
   <figure>
-    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/2.png" alt="See caption">
-    <figcaption>Filename: 2.png. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
+    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/2.jpg" alt="See caption">
+    <figcaption>Filename: 2.jpg. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
   </figure>
   <figure>
-    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/9.png" alt="See caption">
-    <figcaption>Filename: 9.png. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
+    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/9.jpg" alt="See caption">
+    <figcaption>Filename: 9.jpg. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
   </figure>
 </div>
 <p>To Daniel's parents, Richard and Pam Dal Canto, he had seemed to be doing well.Ashley Gilbertson for The New York Times</p>
@@ -177,8 +177,8 @@ figcaption { margin-top: .5rem; font-size: .9rem; opacity: .85; border-left: 3px
 <p>Later that night, he thanked other members for "all of the good wishes." He noted that he was "a little scared" but had specific plans, drawing a flood of messages: 11 "hugs," four "likes," three "loves" and two "awws" --- the emoji crying a single tear.</p>
 <p>At 2:30 a.m., Ms. Dal Canto lay awake and got up to check on Daniel. There was her son, dead in bed.</p>
 <figure class="figure-single">
-  <img src="/assets/images/2025/nyt/where-the-despairing-log-on/8.png" alt="See caption">
-  <figcaption>Filename: 8.png. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
+  <img src="/assets/images/2025/nyt/where-the-despairing-log-on/8.jpg" alt="See caption">
+  <figcaption>Filename: 8.jpg. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
 </figure>
 <p>Daniel's room, more than two years after his death.Ashley Gilbertson for The New York Times</p>
 <p>Thank you for all of thegood wishes, and for theamazing community. Youhave all been a great helpin many ways. I'm a littlescared\...</p>
@@ -206,12 +206,12 @@ figcaption { margin-top: .5rem; font-size: .9rem; opacity: .85; border-left: 3px
 <p>"We were very concerned about having it out there in the open, what that would mean to potentially thousands of other families who had a vulnerable child or a vulnerable person," Julie Inman Grant, the eSafety commissioner, said in an interview.</p>
 <div class="figure-grid">
   <figure>
-    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/11.png" alt="See caption">
-    <figcaption>Filename: 11.png. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
+    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/11.jpg" alt="See caption">
+    <figcaption>Filename: 11.jpg. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
   </figure>
   <figure>
-    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/12.png" alt="See caption">
-    <figcaption>Filename: 12.png. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
+    <img src="/assets/images/2025/nyt/where-the-despairing-log-on/12.jpg" alt="See caption">
+    <figcaption>Filename: 12.jpg. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
   </figure>
 </div>
 <p>Julie Inman Grant, Australia's eSafety commissioner, and Toby Dagg, chief investigator with the commission.Matthew Abbott for The New York Times</p>
@@ -292,7 +292,7 @@ figcaption { margin-top: .5rem; font-size: .9rem; opacity: .85; border-left: 3px
 <p>But he and Marquis claimed they were helping those on the sites by allowing them to freely express themselves and face hard truths, a rationale similar to one they have offered about their suicide site.</p>
 <p>**100 Most-Viewed Posts on the Suicide Forum**</p>
 <figure class="figure-single">
-  <img src="/assets/images/2025/nyt/where-the-despairing-log-on/100-"Most-Viewed"-Posts-on-the-Suicide-Forum.png" alt="See caption">
+  <img src="/assets/images/2025/nyt/where-the-despairing-log-on/100-MostViewed-Posts-on-the-Suicide-Forum.png" alt="See caption">
   <figcaption>The New York Times Note: Posts represented are the 100 with the largest numbers of pageviews, as of Oct. 3, in the "Suicide Discussion" section of the website. This section contains about 75 percent of the website's posts, while the "Recovery" section contains about 5 percent and the "Offtopic" section about 20 percent.</figcaption>
 </figure>
 <p>Note: Posts represented are the 100 with the largest numbers of pageviews, as of Oct. 3, in the "Suicide Discussion" section of the website. This section contains about 75 percent of the website's posts, while the "Recovery" section contains about 5 percent and the "Offtopic" section about 20 percent.</p>
@@ -324,8 +324,8 @@ figcaption { margin-top: .5rem; font-size: .9rem; opacity: .85; border-left: 3px
 <p>When she worried that she had screwed up her suicide plans, others assured her she was on track. And when she shared after taking the preservative that she was "terrified," several wished her success and "safe travels."</p>
 <p>Ms. Bieber, in an interview, recalled identifying the relevant section of the Pennsylvania statute and telling the officials, "'Look, here's the Crimes Code.'"</p>
 <figure class="figure-single">
-  <img src="/assets/images/2025/nyt/where-the-despairing-log-on/10.png" alt="See caption">
-  <figcaption>Filename: 10.png. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
+  <img src="/assets/images/2025/nyt/where-the-despairing-log-on/10.jpg" alt="See caption">
+  <figcaption>Filename: 10.jpg. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
 </figure>
 <p>Jackie Bieber, with her husband, Chip. She pleaded with law enforcement officials to investigate her daughter's death.Ashley Gilbertson for The New York Times</p>
 <p>While federal law protects the site operators from being held liable for most content posted by users, the members could be vulnerable to criminal charges.</p>
@@ -365,8 +365,8 @@ figcaption { margin-top: .5rem; font-size: .9rem; opacity: .85; border-left: 3px
 <p>Sharon Luft, Matthew's mother, and other parents want more.</p>
 <p>"I'm talking to moms that their kids are dying, they're so frustrated," Ms. Luft said in an interview. And friends ask, "'How is this site still allowed?'"</p>
 <figure class="figure-single">
-  <img src="/assets/images/2025/nyt/where-the-despairing-log-on/5.png" alt="See caption">
-  <figcaption>Filename: 5.png. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
+  <img src="/assets/images/2025/nyt/where-the-despairing-log-on/5.jpg" alt="See caption">
+  <figcaption>Filename: 5.jpg. Source: The New York Times (per original report). If you are the rightsholder, please contact { site.email } for credit/update.</figcaption>
 </figure>
 <p>"He was just a sweet kid," said Matthew's mother, Sharon Luft.Ashley Gilbertson for The New York Times</p>
 <p>In January, Robert Davis, a senior vice president at Epik, the domain seller that was later hacked, read Ms. Luft's tweet pleading for help.</p>
