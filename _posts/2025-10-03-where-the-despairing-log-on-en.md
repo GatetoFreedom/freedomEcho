@@ -12,51 +12,16 @@ image: /assets/images/2025/nyt/where-the-despairing-log-on/cover.jpg
 # Source metadata for transparency
 original_title: "Where the Despairing Log On, and Learn Ways to Die"
 original_source: "The New York Times"
-original_url: "https://www.nytimes.com/"
-original_publication_date: "2021-12-09"
-
-# Reuse in captions if needed
 rights_policy:
-  contact: "contact@<your-domain>"
+  contact: "contact@gate2freedom.com"
   jurisdiction: "US"
   fair_use_basis: ["news reporting", "commentary/analysis"]
   limitations: ["low-res/necessary excerpts", "non-commercial", "with source & captions"]
 ---
 
-> **Editors’ note:** This article addresses suicide and contains detailed descriptions of self-harm and loss. Reader discretion is advised.
+> **Editors’ note:** This article focuses on suicide and contains details about those who have taken their own lives. If you are having thoughts of suicide, or are concerned that someone you know may be, resources are available here.
 <!--more-->
 
-> **Original**: *{{original_title }}* — {{ page.original_source }} ({{ page.original_publication_date }})  
-> Link: <{{ page.original_url }}>
-
-<style>
-.bilingual-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem; margin: 1.25rem 0 2rem; align-items: start;
-}
-.bilingual-section .en, .bilingual-section .zh {
-  padding: .9rem 1rem; border: 1px solid #e5e7eb; border-radius: .5rem;
-}
-.bilingual-section .en { font-size: .98rem; line-height: 1.6; }
-.bilingual-section .zh { font-size: 1.02rem; line-height: 1.8; }
-.bilingual-section .label { font-weight: 600; opacity: .7; font-size: .85rem; margin-bottom: .5rem; display: block; }
-
-.figure-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 1.5rem; }
-.figure-grid figure, .figure-single { margin: 0; }
-figure img { width: 100%; height: auto; }
-figcaption { margin-top: .5rem; font-size: .9rem; opacity: .85; border-left: 3px solid #e5e7eb; padding-left: .6rem; }
-
-.emoji-reactions { display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; margin: .75rem 0 1.25rem; }
-.emoji-reactions .emoji img { width: 1.25rem; height: 1.25rem; vertical-align: text-bottom; margin-right: .35rem; }
-
-@media (max-width: 860px) {
-  .bilingual-section { grid-template-columns: 1fr; }
-  .figure-grid { grid-template-columns: 1fr; }
-}
-</style>
-
-<p>**Editors' note:** This article focuses on suicide and contains details about those who have taken their own lives. If you are having thoughts of suicide, or are concerned that someone you know may be, [resources are available here](https://www.nytimes.com/interactive/2021/12/09/us/where-the-despairing-log-on.html#interactive-footer-container).</p>
 <p>**Where the Despairing Log On, and Learn Ways to Die**</p>
 <p>**By [[Megan Twohey]{.underline}](https://www.nytimes.com/by/megan-twohey) and [[Gabriel J.X. Dance]{.underline}](https://www.nytimes.com/by/gabriel-dance)Dec. 9, 2021**</p>
 <p>It has the trappings of popular social media, a young audience and explicit content on suicide that other sites don't allow. It is linked to a long line of lives cut short.</p>
