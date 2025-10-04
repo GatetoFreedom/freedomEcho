@@ -196,7 +196,11 @@ document.addEventListener('DOMContentLoaded', setupPageTransitions);
 /* ========= 新页进场：瀑布级联 ========= */
 function stagedEnter(){
   const raw = sessionStorage.getItem('xfer');
-  if (!raw) return;
+  if (!raw) {
+    // 没有过渡数据时，直接给 body 加上 .enter 类
+    document.body.classList.add('enter');
+    return;
+  }
 
   try{
     const {ox, oy} = JSON.parse(raw);
