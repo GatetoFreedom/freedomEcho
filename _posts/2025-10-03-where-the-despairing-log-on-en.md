@@ -422,7 +422,7 @@ Source: Centers for Disease Control and Prevention. Note: Chart shows the age-ad
 
 Chart-03
 
-100-"Most-Viewed"-Posts-on-the-Suicide-Forum.png
+100-MostViewed-Posts-on-the-Suicide-Forum.png
 
 The New York Times
 
