@@ -242,51 +242,51 @@ tags: [NYT,News]
 **The Times identified 45 people who died by suicide after spending time on the website.**
 <p>(Their names, and in some cases their cities, have been withheld here.)</p>
 
-**16-year-old female**, Illinois
-**16-year-old male**, Salt Lake City
-**17-year-old male**, Frisco, Texas
-**18-year-old male**, Houston
-**18-year-old male**, Bassano del Grappa, Italy
-**19-year-old female**, Richmond, Va.
-**19-year-old male**, Rome
-**19-year-old male**, Rome
-**20-year-old male**, Texas
-**20-year-old female**, Costa Mesa, Calif.
-**20-year-old female**, Radcliffe, England
-**20-year-old female**, Palermo, Italy
-**21-year-old male**, Langley, British Columbia
-**21-year-old male**, Sunderland, England
-**22-year-old male**, Australia</p>
-**22-year-old male**, Perth, Australia
-**23-year-old male**, Leeds, England
-**23-year-old female**, Glasgow
-**24-year-old female**, Cumbria, England
-**24-year-old female**, Scotland
-**25-year-old female**, York Haven, Pa.
-**25-year-old male**, Connecticut
-**25-year-old male**, Portadown, Northern Ireland
-**25-year-old female**, Wisconsin
-**26-year-old male**, North Carolina
-**27-year-old male**, Schertz, Texas
-**28-year-old female**, New Jersey
-**28-year-old female**, North Haven, Conn.
-**28-year-old male**, Scotland
-**29-year-old male**, Widnes, England
-**30-year-old male**, Canada
-**30-year-old male**, Italy
-**30-year-old male**, Grapevine, Texas
-**31-year-old female**, Amherst, Ohio
-**31-year-old male**, Leiston, England
-**31-year-old male**, Kansas City, Mo.
-**31-year-old female**, England
-**32-year-old female**, Missouri
-**32-year-old male**, Leicestershire, England
-**35-year-old male**, Mississippi
-**35-year-old female**, Kirkhill, Inverness, Scotland
-**42-year-old male**, Hilliard, Ohio
-**49-year-old male**, Darlington, England
-**56-year-old male**, California
-**58-year-old male**, Texa
+**16-year-old female**, Illinois<br>
+**16-year-old male**, Salt Lake City<br>
+**17-year-old male**, Frisco, Texas<br>
+**18-year-old male**, Houston<br>
+**18-year-old male**, Bassano del Grappa, Italy<br>
+**19-year-old female**, Richmond, Va.<br>
+**19-year-old male**, Rome<br>
+**19-year-old male**, Rome<br>
+**20-year-old male**, Texas<br>
+**20-year-old female**, Costa Mesa, Calif.<br>
+**20-year-old female**, Radcliffe, England<br>
+**20-year-old female**, Palermo, Italy<br>
+**21-year-old male**, Langley, British Columbia<br>
+**21-year-old male**, Sunderland, England<br>
+**22-year-old male**, Australia<br>
+**22-year-old male**, Perth, Australia<br>
+**23-year-old male**, Leeds, England<br>
+**23-year-old female**, Glasgow<br>
+**24-year-old female**, Cumbria, England<br>
+**24-year-old female**, Scotland<br>
+**25-year-old female**, York Haven, Pa.<br>
+**25-year-old male**, Connecticut<br>
+**25-year-old male**, Portadown, Northern Ireland<br>
+**25-year-old female**, Wisconsin<br>
+**26-year-old male**, North Carolina<br>
+**27-year-old male**, Schertz, Texas<br>
+**28-year-old female**, New Jersey<br>
+**28-year-old female**, North Haven, Conn.<br>
+**28-year-old male**, Scotland<br>
+**29-year-old male**, Widnes, England<br>
+**30-year-old male**, Canada<br>
+**30-year-old male**, Italy<br>
+**30-year-old male**, Grapevine, Texas<br>
+**31-year-old female**, Amherst, Ohio<br>
+**31-year-old male**, Leiston, England<br>
+**31-year-old male**, Kansas City, Mo.<br>
+**31-year-old female**, England<br>
+**32-year-old female**, Missouri<br>
+**32-year-old male**, Leicestershire, England<br>
+**35-year-old male**, Mississippi<br>
+**35-year-old female**, Kirkhill, Inverness, Scotland<br>
+**42-year-old male**, Hilliard, Ohio<br>
+**49-year-old male**, Darlington, England<br>
+**56-year-old male**, California<br>
+**58-year-old male**, Texa<br>
 
 Concerned about legal liability, Marquis explained, the men were requiring prospective members to tick a box affirming they were 18 or older, though he made clear in a post that the site would not ask for proof.
 
@@ -399,14 +399,21 @@ But in June 2019, [BuzzFeed News reported](https://www.buzzfeednews.com/article
 <p>And just this fall, a 30-year-old man in Grapevine, Texas. Newly unemployed, going through a breakup and deeply in debt, he found his way to the site, making his first post in late September. Three days later, he was gone.</p>
 <p>If you are having thoughts of suicide, in the United States call the National Suicide Prevention Lifeline at [800-273-8255](tel:800-273-8255) (TALK) or go to [SpeakingOfSuicide.com/resources](https://www.speakingofsuicide.com/resources/)for a list of additional resources. Go [here](https://www.nytimes.com/article/suicide-prevention-helplines.html) for resources outside the United States.</p>
 
-**Additional reporting**
+**Additional reporting**<br>
 **Emma Bubola, Aditya Jaishankar, Aaron Krolik, Gerardo Lissardy, Aimee Ortiz and Morven Quin.**
-**Research**
+<br>
+
+**Research**<br>
 **Susan C. Beachy, Kitty Bennet, Michael LaForgia, Sheelagh McNeill and Julie Tate.**
-**Graphics**
+<br>
+
+**Graphics**<br>
 **Eleanor Lutz and Duy Nguyen.**
-**Production**
+<br>
+
+**Production**<br>
 **Aliza Aufrichtig and Rumsey Taylor. Additional production by Gabriel Gianordoli.**
+<br>
 
 ## Image Sources & Credits
 Image Sources and Credits
